@@ -1,10 +1,10 @@
 // An exit connects two rooms and exists in both.
-// If it's the kind of exit you interact with (like, a door) it might be in a thinglist
+// If it's the kind of exit you interact with (like, a door) it might have a fronting thing
 // Otherwise, it's probably not.
 
 // When you type "north", you're really calling ( (player.location).north ).go!
 
-public class Exit {
+public class Exit{
 	public Exit(Room side1, Room side2) {
 		this.side1 = side1;
 		this.side2 = side2;

@@ -15,5 +15,9 @@ public class Player extends Thing {
 	public void setLocation(Room location) {
 		this.location = location;
 	}
+
+	public Inventory getInventory() {
+		return inventory;
+	}
 	
 }
