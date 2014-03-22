@@ -1,4 +1,3 @@
-
 public class Understand {
 // A call to understand(thing, String) interprets a verb string
 // Into a function, and performs that function
@@ -30,6 +29,7 @@ public class Understand {
 			th.enter();
 			break;
 		default:
+			System.out.println("Unknown command " + verb);
 			break;
 		}
 	}
