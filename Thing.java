@@ -66,5 +66,9 @@ public class Thing {
 	public void setDesc(String desc) {
 		this.desc = desc;
 	}
-	
+	// Checks to see if a given name matches this thing's.
+	// We use it for iterating through thinglists.
+	public boolean match(String str){
+		return name.equals(str);
+	}
 }
