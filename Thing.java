@@ -1,6 +1,11 @@
 // Superclass for game objects
 public class Thing {
 
+	public Thing(String name, String desc,boolean visible) {
+		this.visible = visible;
+		this.name = name;
+		this.desc = desc;
+	}
 	boolean visible; // If false, does not appear in wordlist searches (is not present in the game)
 	String name; // We have one name.
 	String desc; // Description
