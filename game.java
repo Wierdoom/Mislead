@@ -2,14 +2,15 @@ import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
 
-public class game extends JFrame implements ActionListener {
+public class Game extends JFrame implements ActionListener {
+   static private Player player;
    private JPanel panel;
    private JTextField textField;
    private JTextArea textArea;
    private JLabel label;
    private JScrollPane scrollPane;
    
-   public game(){
+   public Game(){
       panel = new JPanel();
       panel.setLayout(new BorderLayout());
       
@@ -64,6 +65,14 @@ public class game extends JFrame implements ActionListener {
          
    
    public static void main(String[] args){
-      new game();
+      new Game();
    }
+
+public static Player player() {
+	return player;
+}
+
+public static void setPlayer(Player player) {
+	Game.player = player;
+}
 }       
