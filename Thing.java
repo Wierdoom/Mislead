@@ -71,4 +71,5 @@ public class Thing {
 	public boolean match(String str){
 		return name.equals(str);
 	}
+	public String toString(){return name;}
 }
