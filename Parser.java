@@ -9,20 +9,14 @@ public class Parser {
 		return blocks;
 	}
 	
+	//Parses the given blocks and runs them through the understand method
 	public void parse(String[] blocks){
-		scan(blocks[0],'v');
-		scan(blocks[1],'o');
+		Understand.understand(Thinglist.find(blocks[0]), blocks[0]);
       if (!blocks[2] == null) {
-         scan(blocks[2], 'q');
+         //Code for 3 word cases
 		}
       if (!blocks[3] == null) {
-         scan(blocks[3], 'w');
+         //Code for 4 word cases
       }
    }
-
-// Scans a wordlist chosen based on assumed word meaning 
-	private void scan(String str, char c){
-      
-   }
-//TODO
 }
