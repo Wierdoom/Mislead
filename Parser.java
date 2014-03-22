@@ -11,12 +11,20 @@ public class Parser {
 	
 	//Parses the given blocks and runs them through the understand method
 	public void parse(String[] blocks){
-		Understand.understand(Thinglist.find(blocks[0]), blocks[0]);
-      if (!blocks[2] == null) {
+		Thing target = null;
+		target=Game.player().getInventory().find(blocks[1]);
+		if (target!=null){target=Game.player().getLocation().getContents().find(blocks[1]);}
+		
+		Understand.understand(blocks[0], target);
+    
+	/*	
+		if (!(blocks[2] == null)) {
          //Code for 3 word cases
 		}
-      if (!blocks[3] == null) {
+      if (!(blocks[3] == null)) {
          //Code for 4 word cases
+       
+       // Commenting this out for now!
+          */
       }
    }
-}
