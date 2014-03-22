@@ -1,8 +1,8 @@
 public class Understand {
-// A call to understand(thing, String) interprets a verb string
+// A call to understand(thing, String) interprets a 3 word verb string
 // Into a function, and performs that function
 // Of given thing th.
-	static void understand(Thing th, String verb){
+	static void understand(String verb, Thing th){
 		switch(verb){
 		case "get":
 			th.get();
@@ -32,5 +32,15 @@ public class Understand {
 			System.out.println("Unknown command " + verb);
 			break;
 		}
+	}
+	
+	//Understand a 3 word command
+	static void understand(String verb, Thing th1, String word) {
+		//shrek is dreck
+	}
+	
+	//Understand a 4 word command
+	static void understand(String verb, Thing th1, String word, Thing th2){
+		//are you farquad
 	}
 }
