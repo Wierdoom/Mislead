@@ -12,9 +12,17 @@ public class Parser {
 	public void parse(String[] blocks){
 		scan(blocks[0],'v');
 		scan(blocks[1],'o');
+      if (!blocks[2] == null) {
+         scan(blocks[2], 'q');
 		}
+      if (!blocks[3] == null) {
+         scan(blocks[3], 'w');
+      }
+   }
 
 // Scans a wordlist chosen based on assumed word meaning 
-	private void scan(String str, char c){}
+	private void scan(String str, char c){
+      
+   }
 //TODO
 }
