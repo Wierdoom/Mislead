@@ -2,6 +2,42 @@ public class Understand {
 // A call to understand(thing, String) interprets a 3 word verb string
 // Into a function, and performs that function
 // Of given thing th.
+	
+	// Understands a one word command
+	static void understand(String verb){
+		switch(verb){
+		case "north":
+			Game.player().north();
+			break;
+		case "south":
+			Game.player().south();
+			break;
+		case "east":
+			Game.player().east();
+			break;
+		case "west":
+			Game.player().west();
+			break;
+		case "up":
+			Game.player().up();
+			break;
+		case "down":
+			Game.player().down();
+			break;
+		case "look":
+			Game.player().getLocation().describe(true);
+			break;
+		case "i":
+			Io.out(Game.player().getInventory().list());
+			break;
+		default:
+			System.out.println("Unknown command " + verb);
+			break;
+		}
+	}
+	
+	
+	// Understands a two word command
 	static void understand(String verb, Thing th){
 		switch(verb){
 		case "get":
