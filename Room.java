@@ -17,7 +17,7 @@ public class Room {
 	}
 	public void enter(){
 		Game.player().setLocation(this);
-		describe(visited);
+		describe(!visited);
 		visited=true;
 	}
 	public void describe(boolean full){

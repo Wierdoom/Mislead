@@ -40,6 +40,9 @@ public class Understand {
 	// Understands a two word command
 	static void understand(String verb, Thing th){
 		switch(verb){
+		case "look":
+			th.look();
+			break;
 		case "get":
 			th.get();
 			break;

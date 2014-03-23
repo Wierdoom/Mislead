@@ -11,8 +11,15 @@ public class Thinglist {
 	// that isn't visible, it stops -and fails-. If item isn't found, also fails.
 	public Thing find(String str){
 		Thing result = null;
-		for (int i=0;i<contents.size()&&!(result = contents.get(i)).match(str);i++){}
-		if (!result.isVisible()){result = null;}
+		boolean looking = true;
+		for (int i=0;i<contents.size()&&looking; i++){
+			if (contents.get(i)!=null){
+				if (contents.get(i).match(str)){
+					looking = false;
+					if (contents.get(i).isVisible()){result = contents.get(i);}
+			}
+			}
+		}
 		return result;
 	}
 	

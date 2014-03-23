@@ -9,6 +9,7 @@ static Scanner sc = new Scanner(System.in);
 			System.out.println(str);
 		}
 		public static String in(){
+			System.out.print(">");
 			return sc.nextLine();
 		}
 		

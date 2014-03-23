@@ -1,6 +1,11 @@
 // Superclass for game objects
 public class Thing {
 
+	public Thing(String name, String desc) {
+		this.visible = true;
+		this.name = name;
+		this.desc = desc;
+	}
 	public Thing(String name, String desc,boolean visible) {
 		this.visible = visible;
 		this.name = name;
