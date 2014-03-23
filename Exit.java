@@ -50,10 +50,19 @@ public class Exit{
 	
 	public void travel(){
 		if (open){
-		if (Game.player().getLocation()==side1){Game.player().setLocation(side2);}
-		else if (Game.player().getLocation()==side2){Game.player().setLocation(side1);}
+		if (Game.player().getLocation()==side1){side2.enter();}
+		else if (Game.player().getLocation()==side2){side1.enter();}
 		// else, that is not how exits work.
 		}
 		else{Io.out(closedReason);}
+	}
+	// Shuts a door for given closedReason, which is printed when you fail to travel through.
+	public void close(String closedReason) {
+		open = false;
+		this.closedReason = closedReason;
+	}
+	// Reopens an exit.
+	public void open(){
+		open = true;
 	}
 }

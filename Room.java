@@ -1,6 +1,15 @@
 
 public class Room {
+	public Room(String name, String longDescription, String shortDescription) {
+		this.name = name;
+		this.longDescription = longDescription;
+		this.shortDescription = shortDescription;
+		visited = false;
+		contents = new Thinglist();
+	}
 	private Thinglist contents;
+	private String name, longDescription, shortDescription;
+	boolean visited;
 	private Exit north, south, west, east, down, up;
 	
 	public Thinglist getContents() {
@@ -8,7 +17,15 @@ public class Room {
 	}
 	public void enter(){
 		Game.player().setLocation(this);
+		describe(visited);
+		visited=true;
 	}
+	public void describe(boolean full){
+		Io.out(name);
+		if(full){Io.out(longDescription);}
+		else{Io.out(shortDescription);}
+	}
+	
 	public Exit getNorth() {
 		return north;
 	}
