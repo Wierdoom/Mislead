@@ -25,6 +25,10 @@ public class Room {
 		if(full){Io.out(longDescription);}
 		else{Io.out(shortDescription);}
 	}
+	// Adds given thing to room's contents
+	public void add(Thing th){
+		contents.add(th);
+	}
 	
 	public Exit getNorth() {
 		return north;

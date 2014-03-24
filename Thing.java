@@ -52,6 +52,15 @@ public class Thing {
 	public void enter(){
 		Io.out("You can't fit inside the "+name);
 	}
+	public void lock(){
+		Io.out("You don't see a lock on that.");
+	}
+	public void unlock(){
+		Io.out("You don't see a lock on that.");
+	}
+	
+	
+	
 
 	public boolean isVisible() {
 		return visible;

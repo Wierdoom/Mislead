@@ -65,4 +65,16 @@ public class Exit{
 	public void open(){
 		open = true;
 	}
+	public Room getSide1() {
+		return side1;
+	}
+	public void setSide1(Room side1) {
+		this.side1 = side1;
+	}
+	public Room getSide2() {
+		return side2;
+	}
+	public void setSide2(Room side2) {
+		this.side2 = side2;
+	}
 }

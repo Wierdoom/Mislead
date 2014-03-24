@@ -49,6 +49,9 @@ public class Understand {
 		case "open":
 			th.open();
 			break;
+		case "close":
+			th.close();
+			break;
 		case "drink":
 			th.drink();
 			break;
@@ -66,6 +69,12 @@ public class Understand {
 			break;
 		case "enter":
 			th.enter();
+			break;
+		case "lock":
+			th.lock();
+			break;
+		case "unlock":
+			th.unlock();
 			break;
 		default:
 			System.out.println("Unknown command " + verb);

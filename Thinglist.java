@@ -22,6 +22,10 @@ public class Thinglist {
 		}
 		return result;
 	}
+	// True if thinglist has thing, and thing-to-find isn't null
+	public boolean has(Thing th){
+		return contents.contains(th)&&(th!=null);
+	}
 	
 	public void add(Thing th){
 		contents.add(th);
