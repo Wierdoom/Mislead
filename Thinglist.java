@@ -22,6 +22,25 @@ public class Thinglist {
 		}
 		return result;
 	}
+	//Specifies an item if there is no adjective present.
+	public Thing specify(String str){
+		String<> match=new String<>;
+		for (int i=0; i<contents.size(); i++){
+			if (contents.get(i).contains(str)){
+				match.add(contents.get(i));
+			}
+		}
+		if (match.size()>1){
+			Io.out("That's kind of vague...Did you mean...");
+			for (int i=0; i<contents.size(); i++){
+				Io.out(match.get(i)+ " ");
+			}
+			find(Io.in();
+		}
+		else {
+			find(str);
+		}
+	}
 	// True if thinglist has thing, and thing-to-find isn't null
 	public boolean has(Thing th){
 		return contents.contains(th)&&(th!=null);
