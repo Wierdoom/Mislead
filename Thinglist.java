@@ -24,7 +24,7 @@ public class Thinglist {
 	}
 	//Specifies an item if there is no adjective present.
 	public Thing specify(String str){
-		String<> match=new String<>;
+		ArrayList<String> match=new ArrayList<String>;
 		for (int i=0; i<contents.size(); i++){
 			if (contents.get(i).contains(str)){
 				match.add(contents.get(i));
