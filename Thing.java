@@ -5,15 +5,18 @@ public class Thing {
 		this.visible = true;
 		this.name = name;
 		this.desc = desc;
+		this.adj = adj;
 	}
-	public Thing(String name, String desc,boolean visible) {
+	public Thing(String name, String desc,boolean visible, String adj) {
 		this.visible = visible;
 		this.name = name;
 		this.desc = desc;
+		this.adj = adj;
 	}
 	boolean visible; // If false, does not appear in wordlist searches (is not present in the game)
 	String name; // We have one name.
 	String desc; // Description
+	String adj; //Accompanying adjective
 	
 	public void look(){
 		Io.out(desc);
