@@ -5,7 +5,17 @@ public class Thing {
 		this.visible = true;
 		this.name = name;
 		this.desc = desc;
+	}
+	public Thing(String name, String desc, String adj) {
+		this.visible = true;
+		this.name = name;
+		this.desc = desc;
 		this.adj = adj;
+	}
+	public Thing(String name, String desc, boolean visible){
+		this.visible = visible;
+		this.name = name;
+		this.desc = desc;
 	}
 	public Thing(String name, String desc,boolean visible, String adj) {
 		this.visible = visible;
