@@ -10,6 +10,9 @@ public class Carryable extends Thing {
 		super(name, desc);
 		// TODO Auto-generated constructor stub
 	}
+	
+	//NOTE: we should likely implement behaviour for describing items in a room.
+	// Items that don't belong, removing things from description if taken, etc...
 	public void drop() { //method applies to Thing object
 		if (Game.player().getInventory().has(this)) {
 			Game.player().getLocation().add(this);
@@ -18,5 +21,13 @@ public class Carryable extends Thing {
 		} else {
 			Io.out("You can't drop what you don't have.");
 		}
+	}
+	public void get(){
+		if (Game.player().getLocation().getContents().has(this)){
+			Game.player().getInventory().add(this);
+			Game.player().getLocation().getContents().remove(this);
+			Io.out("Taken.");
+		}
+		else{Io.out("No point in getting it now.");}
 	}
 }
