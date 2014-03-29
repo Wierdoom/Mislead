@@ -3,6 +3,53 @@ public class Understand {
 // Into a function, and performs that function
 // Of given thing th.
 	
+	static void understand(String verb, Thing th1, Thing th2){
+		if (th2 == null){understand(verb,th1);}
+		else{
+			switch(verb){
+				case "look":
+					th1.look(th2);
+					break;
+				case "get":
+					th1.get(th2);
+					break;
+				case "open":
+					th1.open(th2);
+					break;
+				case "close":
+					th1.close(th2);
+					break;
+				case "drink":
+					th1.drink(th2);
+					break;
+				case "eat":
+					th1.eat(th2);
+					break;
+				case "hit":
+					th1.hit(th2);
+					break;
+				case "read":
+					th1.read(th2);
+					break;
+				case "go":
+					th1.go(th2);
+					break;
+				case "enter":
+					th1.enter(th2);
+					break;
+				case "lock":
+					th1.lock(th2);
+					break;
+				case "unlock":
+					th1.unlock(th2);
+					break;
+				default:
+					System.out.println("Unknown command " + verb);
+					break;
+			}
+		}
+	}
+	
 	// Understands a one word command
 	static void understand(String verb){
 		switch(verb){
@@ -39,6 +86,8 @@ public class Understand {
 	
 	// Understands a two word command
 	static void understand(String verb, Thing th){
+		if(th==null){understand(verb);}
+		else{
 		switch(verb){
 		case "look":
 			th.look();
@@ -80,15 +129,8 @@ public class Understand {
 			System.out.println("Unknown command " + verb);
 			break;
 		}
+		}
 	}
 	
-	//Understand a 3 word command
-	static void understand(String verb, Thing th1, String word) {
-		//shrek is dreck
-	}
 	
-	//Understand a 4 word command
-	static void understand(String verb, Thing th1, String word, Thing th2){
-		//are you farquad
-	}
 }

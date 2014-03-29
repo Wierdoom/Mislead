@@ -4,6 +4,7 @@ import javax.swing.*;
 
 public class Game extends JFrame implements ActionListener {
    static private Player player;
+   static private Parser parser;
    private JPanel panel;
    private JTextField textField;
    private JTextArea textArea;
@@ -74,5 +75,13 @@ public static Player player() {
 
 public static void setPlayer(Player player) {
 	Game.player = player;
+}
+
+public static Parser getParser() {
+	return parser;
+}
+
+public static void setParser(Parser parser) {
+	Game.parser = parser;
 }
 }       

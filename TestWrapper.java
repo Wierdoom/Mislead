@@ -3,8 +3,9 @@
 public class TestWrapper {
 
 	public static void main(String[] args){
-		Player pl = new Player();
 		Parser prs = new Parser();
+		Game.setParser(prs);
+		Player pl = new Player();
 		Game.setPlayer(pl);
 		Room r1, r2, r3;
 		r1 = new Room("First Room","The first of many. The only exit lies to the north. Water trickles in from somewhere far above.","A bare room. The only exit is to the north.");
@@ -19,7 +20,7 @@ public class TestWrapper {
 		r1.enter();
 		String in;
 		while ( !(in=Io.in()).equals("quit")){
-			prs.command(in);
+			prs.parse(in);
 		}
 	}
 }

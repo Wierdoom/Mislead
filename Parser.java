@@ -1,47 +1,65 @@
+import java.util.StringTokenizer;
+import java.util.ArrayList;
+import java.util.Stack;
+import java.util.Arrays;
+
 
 public class Parser {
 
-	// Performs a command based on given string.
-	public void command(String str){
-		parse(chopUp(str));
+private ArrayList<String> nounList;
+private ArrayList<String> verbList;
+private ArrayList<String> prepositionList;
+	
+	public Parser(){
+		String[] verbSet = {"look","get","open","close","drink","eat","hit","read","go","enter","lock","unlock","north","south","east","west","up","down"};
+		String[] prepositionSet = {"on","with","using","at"}; // not complete, add as make sense
+		nounList = new ArrayList<String>();
+		verbList = new ArrayList<String>();
+		prepositionList = new ArrayList<String>();
+		verbList.addAll(Arrays.asList(verbSet));
+		prepositionList.addAll(Arrays.asList(prepositionSet));
 	}
-	//Using space as a delimiter, returns an array of up to 4 strings
-	// being the first four words in given input
-	private String[] chopUp(String str){
-		String[] blocks = new String[4];
-		blocks = str.split(" ",4);
+
+	public void parse(String in){
+		StringTokenizer tokens = new StringTokenizer(in," ");
+		Thing object = null;
+		Thing secondary = null;
+		Stack<String> stack = new Stack<String>();
+		while (tokens.hasMoreTokens()){stack.push(tokens.nextToken());}
+		String nextWord;
+		boolean valid = true;
+		while(!stack.isEmpty()&&valid){
+			nextWord = stack.pop();
+			if (isVerb(nextWord)){Understand.understand(nextWord,object,secondary);}
+			else if (isPreposition(nextWord)){secondary=object; object=null;}
+			else if (isNoun(nextWord)){object=findObject(nextWord);}
+			else {valid = false;}
+		}
 		
-		// Make sure we get the whitespace out!
-		for(int i=0;i<blocks.length;i++){blocks[i]=blocks[i].trim();}
+	}
 		
-		return blocks;
+		
+	private boolean isVerb(String word){
+		return verbList.contains(word);
+	}	
+
+	private boolean isNoun(String word){
+		return nounList.contains(word);
+	}
+
+	private boolean isPreposition(String word){
+		return prepositionList.contains(word);
+	}	
+
+	private Thing findObject(String word){
+		Thing target = null;
+		target = Game.player().getInventory().find(word);
+		if (target==null){target = Game.player().getLocation().getContents().find(word);}
+		return target;
 	}
 	
-	//Parses the given blocks and runs them through the understand method
-	public void parse(String[] blocks){
-		Thing target = null;
-		
-		if (blocks.length == 1){Understand.understand(blocks[0]);}
-		else{
-			// Look in inventory
-			target=Game.player().getInventory().find(blocks[1]);
-			
-			//If it's not in the inventory, maybe it's in the room?
-			if (target==null){target=Game.player().getLocation().getContents().find(blocks[1]);}
-			
-			// If you've found it, do something to it
-			if (target!=null){Understand.understand(blocks[0], target);}
-			else{Io.out(blocks[1]+" isn't something you can interact with right now.");}
-		}
-    
-	/*	
-		if (!(blocks[2] == null)) {
-         //Code for 3 word cases
-		}
-      if (!(blocks[3] == null)) {
-         //Code for 4 word cases
-       
-       // Commenting this out for now!
-          */
-      }
-   }
+	public void addNoun (String noun){
+		nounList.add(noun);
+	}
+	
+	}

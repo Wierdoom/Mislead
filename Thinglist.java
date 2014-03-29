@@ -23,6 +23,10 @@ public class Thinglist {
 		return result;
 	}
 	//Specifies an item if there is no adjective present.
+
+	
+	//commenting out until this works, GOOD BYE JOJO
+	/*
 	public Thing specify(String str){
 		ArrayList<String> match=new ArrayList<String>;
 		for (int i=0; i<contents.size(); i++){
@@ -35,12 +39,15 @@ public class Thinglist {
 			for (int i=0; i<contents.size(); i++){
 				Io.out(match.get(i)+ " ");
 			}
-			find(Io.in();
+			find(Io.in());
 		}
 		else {
 			find(str);
 		}
 	}
+	*/
+	
+	
 	// True if thinglist has thing, and thing-to-find isn't null
 	public boolean has(Thing th){
 		return contents.contains(th)&&(th!=null);
