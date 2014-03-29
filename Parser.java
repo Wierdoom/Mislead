@@ -11,7 +11,7 @@ private ArrayList<String> verbList;
 private ArrayList<String> prepositionList;
 	
 	public Parser(){
-		String[] verbSet = {"look","get","open","close","drink","eat","hit","read","go","enter","lock","unlock","north","south","east","west","up","down"};
+		String[] verbSet = {"look","get","drop","open","close","drink","eat","hit","read","go","enter","lock","unlock","north","south","east","west","up","down","i"};
 		String[] prepositionSet = {"on","with","using","at"}; // not complete, add as make sense
 		nounList = new ArrayList<String>();
 		verbList = new ArrayList<String>();

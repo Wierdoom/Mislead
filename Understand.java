@@ -95,6 +95,9 @@ public class Understand {
 		case "get":
 			th.get();
 			break;
+		case "drop":
+			th.drop();
+			break;
 		case "open":
 			th.open();
 			break;

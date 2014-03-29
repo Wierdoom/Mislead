@@ -43,6 +43,11 @@ public class Thing {
 		Io.out("This isn't something you can pick up and carry.");
 		// Synonym: "take", "t"
 	}
+	public void drop(){
+		Io.out("You can't drop what you can't carry!");
+		// Synonym: "d", error this properly for two-noun case
+	}
+	
 	public void open(){
 		Io.out("You'd need to break it open first.");
 		// Synonym: "shut"
