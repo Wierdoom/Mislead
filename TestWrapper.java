@@ -14,9 +14,11 @@ public class TestWrapper {
 		new Exit(r1,r2,"ns");
 		new Exit(r2,r3,"ns");
 		Thing snake = new Thing("snake","The world-serpent, Jormungand, whose ancient flesh supports the firmament of the world.");
-		Door gate = new Door("door","A tremendous stone door sits between you and passage further north.",r2.getNorth());
+		Carryable liver = new Carryable("liver", "It's a fucking liver, bro.", "It's a fucking liver, dude.");
+      Door gate = new Door("door","A tremendous stone door sits between you and passage further north.",r2.getNorth());
 		gate.setOpenState(false);
 		r3.getContents().add(snake);
+      r2.getContents().add(liver);
 		r1.enter();
 		String in;
 		while ( !(in=Io.in()).equals("quit")){

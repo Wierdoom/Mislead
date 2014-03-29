@@ -1,4 +1,3 @@
-
 public class Room {
 	public Room(String name, String longDescription, String shortDescription) {
 		this.name = name;
@@ -8,6 +7,7 @@ public class Room {
 		contents = new Thinglist();
 	}
 	private Thinglist contents;
+   private Thinglist carryables;
 	private String name, longDescription, shortDescription;
 	boolean visited;
 	private Exit north, south, west, east, down, up;
@@ -24,11 +24,18 @@ public class Room {
 		Io.out(name);
 		if(full){Io.out(longDescription);}
 		else{Io.out(shortDescription);}
+      Io.out("\nObjects:\n");
+      contents.printObjects();
 	}
 	// Adds given thing to room's contents
 	public void add(Thing th){
 		contents.add(th);
 	}
+   
+   // Removes a given Thing from a room's contents
+   public void remove(Thing th) {
+      contents.remove(th);
+   }
 	
 	public Exit getNorth() {
 		return north;

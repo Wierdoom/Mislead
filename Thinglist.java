@@ -28,21 +28,22 @@ public class Thinglist {
 	//commenting out until this works, GOOD BYE JOJO
 	/*
 	public Thing specify(String str){
-		ArrayList<String> match=new ArrayList<String>;
+		ArrayList<Thing> match=new ArrayList<Thing>();
 		for (int i=0; i<contents.size(); i++){
-			if (contents.get(i).contains(str)){
+			if (contents.get(i).getName().equals(str)){
 				match.add(contents.get(i));
 			}
 		}
 		if (match.size()>1){
 			Io.out("That's kind of vague...Did you mean...");
 			for (int i=0; i<contents.size(); i++){
-				Io.out(match.get(i)+ " ");
+				Io.out(match.get(i).getName()+ " ");
 			}
 			find(Io.in());
+			return find(Io.in());
 		}
 		else {
-			find(str);
+			return find(str);
 		}
 	}
 	*/
@@ -59,4 +60,10 @@ public class Thinglist {
 	public void remove(Thing th){
 		contents.remove(th);
 	}
+   
+   public void printObjects() {
+      for (int i = 0; i < contents.size(); i++) {
+         Io.out(contents.get(i).getName());
+      }
+   }
 }
