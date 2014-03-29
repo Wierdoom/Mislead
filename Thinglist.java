@@ -52,4 +52,10 @@ public class Thinglist {
 	public void remove(Thing th){
 		contents.remove(th);
 	}
+   
+   public void printObjects() {
+      for (int i = 0; i < this.size) {
+         Io.out(contents.get(i).getName());
+      }
+   }
 }
