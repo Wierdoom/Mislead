@@ -82,10 +82,6 @@ public class Thing {
 	public void setVisible(boolean visible) {
 		this.visible = visible;
 	}
-   
-   public boolean getCarryable() {
-      return isCarryable;
-   }
 
 	public String getName() {
 		return name;
