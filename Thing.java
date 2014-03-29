@@ -30,8 +30,11 @@ public class Thing {
 	boolean visible; // If false, does not appear in wordlist searches (is not present in the game)
 	String name; // We have one name.
 	String desc; // Description
-	String adj; //Accompanying adjective
-	
+	String descPicked;
+   String adj; //Accompanying adjective
+	boolean isPicked;
+   
+   
 	//1 VERB
 	
 	public void look(){
@@ -153,6 +156,18 @@ public class Thing {
 	public void setDesc(String desc) {
 		this.desc = desc;
 	}
+   
+   public String getDescPicked() {
+      return descPicked;
+   }
+   
+   public boolean getPicked() {
+      return isPicked;
+   }
+   
+   public void setDescPicked(String d) {
+      descPicked = d;
+   }
 	// Checks to see if a given name matches this thing's.
 	// We use it for iterating through thinglists.
 	public boolean match(String str){

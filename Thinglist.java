@@ -64,6 +64,12 @@ public class Thinglist {
    public void printObjects() {
       for (int i = 0; i < contents.size(); i++) {
          Io.out(contents.get(i).getName());
+         if (contents.get(i).getPicked() == true) {
+            Io.out(contents.get(i).getDescPicked());
+         }
+         else {
+            Io.out(contents.get(i).getDesc());
+         }
       }
    }
 }
