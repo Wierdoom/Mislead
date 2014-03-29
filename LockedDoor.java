@@ -11,6 +11,7 @@ public class LockedDoor extends Door {
 	public LockedDoor(String name, String desc, Exit exit, Thing key){
 		super(name,desc,exit);
 		this.key = key;
+		setLocked(true);
 	}
 	
 	
