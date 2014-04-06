@@ -9,6 +9,8 @@ public class Onion {
    public String (String shrek) {
       if (shrekIsLove.equals("Shrek is love")) {
          return "Shrek is life";
+      } else {
+         return "Get outta mah swamp >:C";
       }
       layers++;
    }
