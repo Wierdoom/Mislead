@@ -5,6 +5,7 @@ import javax.swing.*;
 public class Game extends JFrame implements ActionListener {
    static private Player player;
    static private Parser parser;
+   static private Time time;
    private JPanel panel;
    private JTextField textField;
    private JTextArea textArea;
@@ -83,5 +84,13 @@ public static Parser getParser() {
 
 public static void setParser(Parser parser) {
 	Game.parser = parser;
+}
+
+public static Time getTime() {
+	return time;
+}
+
+public static void setTime(Time time) {
+	Game.time = time;
 }
 }       
