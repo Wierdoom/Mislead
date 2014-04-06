@@ -4,15 +4,20 @@
 
 public class Time {
 private int time;
+private LinkedList list;
 
   public Time(){
     time=0;
   }
   public void Increment(){
     time++;}
-public int getTime() {
-	return time;
-}
+  public int getTime() {
+    return time;
+  }
+  public LinkedList getList(){
+    return list; 
+  }
+  
   
 }
 
