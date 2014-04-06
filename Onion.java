@@ -1,8 +1,8 @@
 public class Onion {
-   public boolean farquad;
+   public boolean farquaad;
    public int layers;
    
-   public boolean isFarquad() {
+   public boolean isFarquaad() {
       return farquad;
    }
    
@@ -17,6 +17,14 @@ public class Onion {
    
    public String peelLayers() {
       layers--;
-      return "Drek as fuck, damn Farquad";
+      return "Drek as fuck, damn Farquaad";
+   }
+   
+   public String compare(Ogre shrek) {
+      if (this.layers == shrek.getlayers()) {
+         return "Ogres are like onions";
+      } else {
+         return "Y'know not everybody likes onions...";
+      }
    }
 }
