@@ -12,4 +12,9 @@ public class Onion {
       }
       layers++;
    }
+   
+   public String peelLayers() {
+      layers--;
+      return "Drek as fuck, damn Farquad";
+   }
 }
