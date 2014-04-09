@@ -1,3 +1,4 @@
+//The main location for editing the looks of the GUI
 import java.awt.*;
 import java.awt.event.*;
 import javax.swing.*;
@@ -54,21 +55,19 @@ public class Game extends JFrame implements ActionListener {
    public void actionPerformed(ActionEvent e){
       String text = textField.getText();
       textArea.append(text + "\n");
-      textArea.setCaretPosition(textArea.getDocument().getLength());
       textField.setText("");
-      textArea.setCaretPosition(textArea.getDocument().getLength());
+      parser.parse(text);
    }  
    
-   public String a(String str){
-      String article = "a";
-      if(str.substring(0,1).matches("[aeiouAEIOU]")){article = "an";}
-      return article + " " + str;
-   }   
-         
-   
-   public static void main(String[] args){
-      new Game();
+   public void print(String str){
+      textArea.append(str);
+      textArea.setCaretPosition(textArea.getDocument().getLength());
    }
+   
+   public void println(String str){
+      textArea.append(str + "\n"); 
+      textArea.setCaretPosition(textArea.getDocument().getLength());
+   } 
 
 public static Player player() {
 	return player;

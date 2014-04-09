@@ -52,5 +52,12 @@ public class Player extends Thing {
 		if (destination!=null){destination.travel();}
 		else{Io.out("There's no way down.");}
 	}
+   
+   //Need to add a way to pause execution until a key is pressed
+   public void gameEnd(String circ) {
+      Io.out(circ);
+      Io.out(movesTaken + "moves taken");
+      
+   }
 	
 }

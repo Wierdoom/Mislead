@@ -9,7 +9,7 @@ public class Understand {
 			switch(verb){
 				case "look":
 					th1.look(th2);
-               Game.getTime().increment();
+					Game.getTime().increment();
 					break;
 				case "get":
 					th1.get(th2);

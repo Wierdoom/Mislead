@@ -7,6 +7,8 @@ public class TestWrapper {
 		Game.setParser(prs);
 		Player pl = new Player();
 		Game.setPlayer(pl);
+		Game game = new Game();
+      		Io.setGame(game);
 		Room r1, r2, r3, r4;
 		r1 = new Room("First Room","The first of many. The only exit lies to the north. Water trickles in from somewhere far above.","A bare room. The only exit is to the north.");
 		r2 = new Room("Second Room","A vaulted corridor. Fresh moss carpets the walls and floor - this whole place seems oddly alive. A corridor runs to the south, leading to a massive door to the north.","A corridor running from the south that sits before a tremendous door.");

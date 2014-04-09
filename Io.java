@@ -3,26 +3,15 @@
 
 import java.util.Scanner;
 
-public class Io {
+public class Io{
+static private Game game;
 static Scanner sc = new Scanner(System.in);
 		public static void out(String str){
-			
-			// Splits long lines apart into two lines at a space character.
-			int linebrk;
-			if (str.length()>80){
-				linebrk = str.indexOf(' ',80);
-				if (linebrk!=-1){
-				System.out.println(str.substring(0,linebrk));
-				Io.out(str.substring(linebrk+1));
-				}
-				else{System.out.println(str);}
-			}
-			else{
-			System.out.println(str);
-			}
+			game.println(str);
 		}
+      
 		public static String in(){
-			System.out.print(">");
+			game.print(">");
 			return sc.nextLine();
 		}
 		
@@ -32,4 +21,8 @@ static Scanner sc = new Scanner(System.in);
 		else{r="a "+str;}
 		return r;
 		}
+      
+      public static void setGame(Game game){
+         Io.game = game;
+      }   
 }
