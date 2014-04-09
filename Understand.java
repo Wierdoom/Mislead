@@ -9,51 +9,51 @@ public class Understand {
 			switch(verb){
 				case "look":
 					th1.look(th2);
-               Time.increment();
+               Game.getTime().increment();
 					break;
 				case "get":
 					th1.get(th2);
-               Time.increment();
+					Game.getTime().increment();
 					break;
 				case "open":
 					th1.open(th2);
-               Time.increment();
+					Game.getTime().increment();
 					break;
 				case "close":
 					th1.close(th2);
-               Time.increment();
+					Game.getTime().increment();
 					break;
 				case "drink":
 					th1.drink(th2);
-               Time.increment();
+					Game.getTime().increment();
 					break;
 				case "eat":
 					th1.eat(th2);
-               Time.increment();
+					Game.getTime().increment();
 					break;
 				case "hit":
 					th1.hit(th2);
-               Time.increment();
+					Game.getTime().increment();
 					break;
 				case "read":
 					th1.read(th2);
-               Time.increment();
+					Game.getTime().increment();
 					break;
 				case "go":
 					th1.go(th2);
-               Time.increment();
+					Game.getTime().increment();
 					break;
 				case "enter":
 					th1.enter(th2);
-               Time.increment();
+					Game.getTime().increment();
 					break;
 				case "lock":
 					th1.lock(th2);
-               Time.increment();
+					Game.getTime().increment();
 					break;
 				case "unlock":
 					th1.unlock(th2);
-               Time.increment();
+					Game.getTime().increment();
 					break;
 				default:
 					System.out.println("Unknown command " + verb);
@@ -67,35 +67,33 @@ public class Understand {
 		switch(verb){
 		case "north":
 			Game.player().north();
-         Time.increment();
+			Game.getTime().increment();
 			break;
 		case "south":
 			Game.player().south();
-         Time.increment();
+			Game.getTime().increment();
 			break;
 		case "east":
 			Game.player().east();
-         Time.increment();
+			Game.getTime().increment();
 			break;
 		case "west":
 			Game.player().west();
-         Time.increment();
+			Game.getTime().increment();
 			break;
 		case "up":
 			Game.player().up();
-         Time.increment();
+			Game.getTime().increment();
 			break;
 		case "down":
 			Game.player().down();
-         Time.increment();
+			Game.getTime().increment();
 			break;
 		case "look":
 			Game.player().getLocation().describe(true);
-         Time.increment();
 			break;
 		case "i":
 			Io.out(Game.player().getInventory().list());
-         Time.increment();
 			break;
 		default:
 			System.out.println("Unknown command " + verb);
@@ -111,59 +109,61 @@ public class Understand {
 		switch(verb){
 		case "look":
 			th.look();
-         Time.increment();
+			Game.getTime().increment();
 			break;
 		case "get":
 			th.get();
-         Time.increment();
+			Game.getTime().increment();
 			break;
 		case "drop":
 			th.drop();
-         Time.increment();
+			Game.getTime().increment();
 			break;
 		case "open":
 			th.open();
-         Time.increment();
+			Game.getTime().increment();
 			break;
 		case "close":
 			th.close();
-         Time.increment();
+			Game.getTime().increment();
 			break;
 		case "drink":
 			th.drink();
-         Time.increment();
+			Game.getTime().increment();
 			break;
 		case "eat":
 			th.eat();
-         Time.increment();
+			Game.getTime().increment();
 			break;
 		case "hit":
 			th.hit();
-         Time.increment();
+			Game.getTime().increment();
 			break;
 		case "read":
 			th.read();
-         Time.increment();
+			Game.getTime().increment();
 			break;
 		case "go":
 			th.go();
-         Time.increment();
+			Game.getTime().increment();
 			break;
 		case "enter":
 			th.enter();
-         Time.increment();
+			Game.getTime().increment();
 			break;
 		case "lock":
 			th.lock();
-         Time.increment();
+			Game.getTime().increment();
 			break;
 		case "unlock":
 			th.unlock();
-         Time.increment();
+			Game.getTime().increment();
 			break;
 		default:
 			System.out.println("Unknown command " + verb);
 			break;
 		}
 	}
+}
+	
 }
