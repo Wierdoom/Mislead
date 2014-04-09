@@ -9,8 +9,15 @@ private LinkedList list;
   public Time(){
     time=0;
   }
-  public void Increment(){
-    time++;}
+  public void increment(){
+    time++;
+    while(list.getFrontNode().getTime()==time){
+    	list.getFrontNode().getThing().tick();
+    	list.removeFront();
+    }
+  	
+  		
+  }
   public int getTime() {
     return time;
   }
