@@ -56,7 +56,7 @@ public class Player extends Thing {
    //Need to add a way to pause execution until a key is pressed
    public void gameEnd(String circ) {
       Io.out(circ);
-      Io.out(movesTaken + "moves taken");
+      Io.out(Game.getTime().getTime() + "moves taken");
       
    }
 	

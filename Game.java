@@ -92,4 +92,9 @@ public static Time getTime() {
 public static void setTime(Time time) {
 	Game.time = time;
 }
+public static void initialize(){
+	time = new Time();
+	parser = new Parser();
+	player = new Player();
+}
 }       
