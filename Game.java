@@ -49,6 +49,9 @@ public class Game extends JFrame implements ActionListener {
       setLocationRelativeTo(null);
       setDefaultCloseOperation(EXIT_ON_CLOSE);
       setVisible(true);
+      
+      //initialize sub-bits
+      initialize();
          
    }  
    

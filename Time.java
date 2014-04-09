@@ -8,10 +8,11 @@ private LinkedList list;
 
   public Time(){
     time=0;
+    list = new LinkedList();
   }
   public void increment(){
     time++;
-    while(list.getFrontNode().getTime()==time){
+    while((list.getFrontNode() != null)&&list.getFrontNode().getTime()==time){
     	list.getFrontNode().getThing().tick();
     	list.removeFront();
     }
