@@ -1,12 +1,7 @@
-//The class of items you can pick up and carry.
-//TODO: add get() functionality for taking from room and putting in inventory
+// The class of items you can pick up and carry.
 public class Carryable extends Thing {
 
-   // Extra Attributes
-   boolean isPicked;
-   boolean isCarryable;
-   String descPicked;
-
+   // Constructors. Gives a carryable a name, description, secondary description, and visibility state.
 	public Carryable(String name, String desc, String descPick, boolean visible) {
 		super(name, desc, visible);
       isPicked = false;
@@ -21,18 +16,22 @@ public class Carryable extends Thing {
       isCarryable = true;
 	}
 	
-	//NOTE: we should likely implement behaviour for describing items in a room.
-	// Items that don't belong, removing things from description if taken, etc...
+	// Takes an item in the player's inventory and drops it into the room.
+   // Returns an error if the item does not exist in their inventory.
 	public void drop() { //method applies to Thing object
 		if (Game.player().getInventory().has(this)) {
 			Game.player().getLocation().add(this);
 			Game.player().getInventory().remove(this);
 			Io.out(this.getName() + " was dropped in this room.");
-		} else {
+		}
+      
+      else {
 			Io.out("You can't drop what you don't have.");
 		}
 	}
    
+   // Takes a carryable item in the room and adds it to the player's inventory.
+   // Returns an error if the item does not exist in the room.
 	public void get(){
 		if (Game.player().getLocation().getContents().has(this)){
 			Game.player().getInventory().add(this);
@@ -43,11 +42,9 @@ public class Carryable extends Thing {
 		else{Io.out("No point in getting it now.");}
 	}
    
+   // Returns whether or not the object can be carried.
    public boolean getCarryable() {
       return isCarryable;
    }
-   
-   public boolean getPicked() {
-      return isPicked;
-   }
+
 }

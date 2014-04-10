@@ -5,19 +5,24 @@ public class Thing {
 		this.visible = true;
 		this.name = name;
 		this.desc = desc;
+      this.isCarryable = false;
 		Game.getParser().addNoun(name);
 	}
+   
 	public Thing(String name, String desc, String adj) {
 		this.visible = true;
 		this.name = name;
 		this.desc = desc;
 		this.adj = adj;
+      this.isCarryable = false;
 		Game.getParser().addNoun(name);
 	}
+   
 	public Thing(String name, String desc, boolean visible){
 		this.visible = visible;
 		this.name = name;
 		this.desc = desc;
+      this.isCarryable = false;
 		Game.getParser().addNoun(name);
 	}
 	public Thing(String name, String desc,boolean visible, String adj) {
@@ -25,6 +30,7 @@ public class Thing {
 		this.name = name;
 		this.desc = desc;
 		this.adj = adj;
+      this.isCarryable = false;
 		Game.getParser().addNoun(name);
 	}
 	boolean visible; // If false, does not appear in wordlist searches (is not present in the game)
@@ -33,7 +39,7 @@ public class Thing {
 	String descPicked;
    String adj; //Accompanying adjective
 	boolean isPicked;
-   
+   boolean isCarryable;
    
 	//1 VERB
 	
@@ -167,11 +173,24 @@ public class Thing {
 	
 	// Function for activating a thing's time property.
 	// Most objects aren't time-sensitive, so this does nothing.
+<<<<<<< HEAD
 	public void tick(){}
 	
 	// Adds the thing to the schedule, to activate in t turns
 	public void schedule(int t){ //TODO ONCE LINKED LIST HAS TARGETED ADD
 	}
+=======
+	public void tick() {
+
+   }
+   
+   //Switches two objects.
+   //Used for swapping objects once a timer is up.
+   /*this doesn't work, you need to flip this object visible=false and replace it with something else like that*/
+   /*public void switch(Thing th2) {
+      this = th2;
+   }*/
+>>>>>>> 1c584df9d04e86f5aa1260252bb119df55728fbc
 
 	public boolean isVisible() {
 		return visible;
@@ -214,4 +233,9 @@ public class Thing {
 		return name.equals(str);
 	}
 	public String toString(){return name;}
+	
+	//Fix for Room error.
+	public boolean getCarryable(){
+		return false;
+	}
 }

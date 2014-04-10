@@ -29,12 +29,22 @@ public class Room {
 	}
 	// Adds given thing to room's contents
 	public void add(Thing th){
-		contents.add(th);
+      if (th.getCarryable()) {
+         carryables.add(th);
+      }
+      else {
+		   contents.add(th);
+      }
 	}
    
    // Removes a given Thing from a room's contents
    public void remove(Thing th) {
-      contents.remove(th);
+      if (th.getCarryable()) {
+         carryables.remove(th);
+      }
+      else {
+         contents.remove(th);
+      }
    }
 	
 	public Exit getNorth() {
@@ -73,10 +83,17 @@ public class Room {
 	public void setUp(Exit up) {
 		this.up = up;
 	}
+<<<<<<< HEAD
 	public void setLongDescription(String longDescription) {
 		this.longDescription = longDescription;
 	}
 	public void setShortDescription(String shortDescription) {
 		this.shortDescription = shortDescription;
 	}
+=======
+   
+   public Thinglist getCarryables() {
+      return carryables;
+   }
+>>>>>>> 1c584df9d04e86f5aa1260252bb119df55728fbc
 }
