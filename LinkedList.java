@@ -181,7 +181,7 @@ public class LinkedList {
 			while (curr != null && curr.time <= val && curr.next != null && curr.next.time > val) {
 				curr=curr.next;
 			}
-			if (curr != null && !curr.next.equals(null) {
+			if (curr != null && !curr.next.equals(null)) {
 				tmp.setNext(curr.next);
 				curr.setNext(tmp);
 			} else if (curr.next.equals(null)) {
