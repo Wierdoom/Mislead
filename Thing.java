@@ -191,4 +191,9 @@ public class Thing {
 		return name.equals(str);
 	}
 	public String toString(){return name;}
+	
+	//Fix for Room error.
+	public boolean getCarryable(){
+		return false;
+	}
 }
