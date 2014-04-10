@@ -1,4 +1,3 @@
-
 public class LinkedList {
 	//Attributes
 	Node front;
@@ -170,6 +169,20 @@ public class LinkedList {
 		}
 		else {
 			System.out.println("Index error or out of bounds");
+		}
+	}
+	//adds a Node to the list based on time value; larger time values are added after smaller values
+	public void addInto(int val,Thing obj) {
+		Node curr = front;
+		Node tmp = new Node(val,obj,null);
+		while (curr != null && curr.time <= val) {
+			curr=curr.next;
+		}
+		if (curr != null && !curr.next.equals(null) {
+			tmp.setNext(curr.next);
+			curr.setNext(tmp);
+		} else if (curr.next.equals(null)) {
+			curr.setNext(tmp);
 		}
 	}
 }
