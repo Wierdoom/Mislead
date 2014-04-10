@@ -100,6 +100,7 @@ public class Game extends JFrame implements ActionListener {
 	//updates the directions using the current room housing the player
 	public void updateDirections(){
 		room = player.getLocation();
+		if (room!=null){
 		if(room.getNorth() != null){n = true;}
 		else{n = false;}
 		if(room.getSouth() != null){s = true;}
@@ -114,6 +115,7 @@ public class Game extends JFrame implements ActionListener {
 		else{d = false;}
 
 		textPane.setText(direct());
+		}
 	}
 
 	//returns the availible directions in a string

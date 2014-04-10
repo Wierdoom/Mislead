@@ -5,6 +5,7 @@ public class Room {
 		this.shortDescription = shortDescription;
 		visited = false;
 		contents = new Thinglist();
+		carryables = new Thinglist();
 	}
 	private Thinglist contents;
    private Thinglist carryables;
@@ -83,17 +84,13 @@ public class Room {
 	public void setUp(Exit up) {
 		this.up = up;
 	}
-<<<<<<< HEAD
 	public void setLongDescription(String longDescription) {
 		this.longDescription = longDescription;
 	}
 	public void setShortDescription(String shortDescription) {
 		this.shortDescription = shortDescription;
 	}
-=======
-   
    public Thinglist getCarryables() {
       return carryables;
    }
->>>>>>> 1c584df9d04e86f5aa1260252bb119df55728fbc
 }

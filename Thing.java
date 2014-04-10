@@ -173,16 +173,12 @@ public class Thing {
 	
 	// Function for activating a thing's time property.
 	// Most objects aren't time-sensitive, so this does nothing.
-<<<<<<< HEAD
 	public void tick(){}
 	
 	// Adds the thing to the schedule, to activate in t turns
 	public void schedule(int t){ //TODO ONCE LINKED LIST HAS TARGETED ADD
 	}
-=======
-	public void tick() {
 
-   }
    
    //Switches two objects.
    //Used for swapping objects once a timer is up.
@@ -190,7 +186,6 @@ public class Thing {
    /*public void switch(Thing th2) {
       this = th2;
    }*/
->>>>>>> 1c584df9d04e86f5aa1260252bb119df55728fbc
 
 	public boolean isVisible() {
 		return visible;
