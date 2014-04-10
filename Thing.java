@@ -176,9 +176,16 @@ public class Thing {
 	public void tick(){}
 	
 	// Adds the thing to the schedule, to activate in t turns
-	public void schedule(int t){ //TODO ONCE LINKED LIST HAS TARGETED ADD
+	public void schedule(int t){
+		int scheduleTime = Game.getTime().getTime()+t;
+		Game.getTime().getSchedule().addInto(scheduleTime, this);
 	}
 
+	//TODO: searchfor is NOT trustworthy - will null pointer except if item is not in list
+	public void unschedule(){
+		int i = Game.getTime().getSchedule().searchFor(this);
+		Game.getTime().getSchedule().remove(i);
+	}
    
    //Switches two objects.
    //Used for swapping objects once a timer is up.
