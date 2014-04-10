@@ -19,7 +19,7 @@ public class LinkedList {
 	}
 	//Check if the list is empty
 	public boolean isEmpty(){
-		return (front==null); //return (count==0); return size()==0;
+		return (front==null);
 	}
 	//Clear the list
 	public void clear(){

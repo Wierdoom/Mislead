@@ -13,8 +13,10 @@ private LinkedList schedule;
   public void increment(){
     time++;
     while((schedule.getFrontNode() != null)&&schedule.getFrontNode().getTime()==time){
-    	schedule.getFrontNode().getThing().tick();
+    	Thing th =  schedule.getFrontNode().getThing();
     	schedule.removeFront();
+    	th.tick();
+    	
     }
   	
   		
