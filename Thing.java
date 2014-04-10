@@ -146,9 +146,10 @@ public class Thing {
    
    //Switches two objects.
    //Used for swapping objects once a timer is up.
-   public void switch(Thing th2) {
+   /*this doesn't work, you need to flip this object visible=false and replace it with something else like that*/
+   /*public void switch(Thing th2) {
       this = th2;
-   }
+   }*/
 
 	public boolean isVisible() {
 		return visible;
