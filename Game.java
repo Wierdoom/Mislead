@@ -68,9 +68,16 @@ public class Game extends JFrame implements ActionListener {
 
    public void actionPerformed(ActionEvent e){
       String text = textField.getText();
-      textArea.append(text + "\n");
+      text = text.replaceAll("[^a-zA-Z /]", "").toLowerCase();
+      if(text.equals("")){}
+      else if(text.charAt(0) == '/'){
+		slash(text);
+      }
+      else{
+      	textArea.append(text + "\n");
+      	parser.parse(text);
+      }
       textField.setText("");
-      parser.parse(text);
    }
 
    public void print(String str){
@@ -86,6 +93,9 @@ public class Game extends JFrame implements ActionListener {
       updateDirections();
 	}
 
+	//takes commands from the user
+	public void slash(String cmd){
+	}
 
 	//updates the directions using the current room housing the player
 	public void updateDirections(){
