@@ -182,7 +182,7 @@ public class LinkedList {
             		index++;
             		curr= curr.next;
          		}
-         		if (curr.equals(null) {
+         		if (curr.equals(null)) {
          			index = -1;
          		}
       		}
