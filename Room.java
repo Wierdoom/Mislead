@@ -29,7 +29,7 @@ public class Room {
 	}
 	// Adds given thing to room's contents
 	public void add(Thing th){
-      if (isCarryable) {
+      if (th.getCarryable()) {
          carryables.add(th);
       }
       else {
@@ -39,7 +39,7 @@ public class Room {
    
    // Removes a given Thing from a room's contents
    public void remove(Thing th) {
-      if (isCarryable) {
+      if (th.getCarryable()) {
          carryables.remove(th);
       }
       else {
