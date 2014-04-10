@@ -175,8 +175,6 @@ public class LinkedList {
 	public void addInto(int val,Thing obj) {
 		if (isEmpty()) {
 			this.addtoFront(val,obj);
-		} else if (front.next.equals(null)) {
-			this.addtoEnd(val,obj);
 		} else {
 			Node curr = front;
 			Node tmp = new Node(val,obj,null);
