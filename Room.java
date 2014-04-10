@@ -84,6 +84,7 @@ public class Room {
 		this.up = up;
 	}
    
-   public ThingList getCarryables() {
+   public Thinglist getCarryables() {
       return carryables;
+   }
 }
