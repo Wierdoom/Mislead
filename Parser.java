@@ -11,7 +11,7 @@ private ArrayList<String> verbList;
 private ArrayList<String> prepositionList;
 	
 	public Parser(){
-		String[] verbSet = {"look","get","drop","open","close","drink","eat","hit","read","go","enter","lock","unlock","north","south","east","west","up","down","i"};
+		String[] verbSet = {"look","get","drop","open","close","drink","eat","hit","read","go","enter","lock","unlock","north","south","east","west","up","down","i","use","photograph"};
 		String[] prepositionSet = {"on","with","using","at"}; // not complete, add as make sense
 		nounList = new ArrayList<String>();
 		verbList = new ArrayList<String>();
@@ -33,9 +33,9 @@ private ArrayList<String> prepositionList;
 			if (isVerb(nextWord)){Understand.understand(nextWord,object,secondary);}
 			else if (isPreposition(nextWord)){secondary=object; object=null;}
 			else if (isNoun(nextWord)){object=findObject(nextWord);}
-			else {valid = false;}
+			else {valid = false;
+				Io.out("[Couldn't find valid command in line "+in+" ]");}
 		}
-		
 	}
 		
 		

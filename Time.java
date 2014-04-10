@@ -4,17 +4,17 @@
 
 public class Time {
 private int time;
-private LinkedList list;
+private LinkedList schedule;
 
   public Time(){
     time=0;
-    list = new LinkedList();
+    schedule = new LinkedList();
   }
   public void increment(){
     time++;
-    while((list.getFrontNode() != null)&&list.getFrontNode().getTime()==time){
-    	list.getFrontNode().getThing().tick();
-    	list.removeFront();
+    while((schedule.getFrontNode() != null)&&schedule.getFrontNode().getTime()==time){
+    	schedule.getFrontNode().getThing().tick();
+    	schedule.removeFront();
     }
   	
   		
@@ -22,8 +22,8 @@ private LinkedList list;
   public int getTime() {
     return time;
   }
-  public LinkedList getList(){
-    return list; 
+  public LinkedList getSchedule(){
+    return schedule; 
   }
   
   

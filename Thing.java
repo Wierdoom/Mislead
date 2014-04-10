@@ -85,6 +85,17 @@ public class Thing {
 	public void unlock(){
 		Io.out("You don't see a lock on that.");
 	}
+	public void use(){
+		Io.out("Try being more specific.");
+	}
+	public void photograph(){
+		if (Game.player().getInventory().has("camera")){
+			photoSuccess();
+		}
+		else{Io.out("You need to be carrying the camera to take photos.");}
+	}
+	
+
 	
 //TWO OBJECT VERBS
 	
@@ -131,10 +142,36 @@ public class Thing {
 	public void unlock(Thing o){
 		Io.out("You don't see a lock on that.");
 	}
+	public void use(Thing o){
+		Io.out("You aren't sure how to use them together.");
+	}
+	public void photograph(Thing o){
+		if (o.getName().equals("camera")){
+			if(Game.player().getInventory().has("camera")){
+				this.photoSuccess();
+			}
+			else{Io.out("You need to be carrying the camera to take photos.");}
+		}
+		else{Io.out("That's not something you can snap photos with.");}
+	}
+	
+	//PHOTOGRAPHY
+	// (action on successful photo)
+	
+	private void photoSuccess(){
+		Io.out("You line up and snap a good photo of the "+name+".");
+	}
+	
+	
+	//TIME
 	
 	// Function for activating a thing's time property.
 	// Most objects aren't time-sensitive, so this does nothing.
 	public void tick(){}
+	
+	// Adds the thing to the schedule, to activate in t turns
+	public void schedule(int t){ //TODO ONCE LINKED LIST HAS TARGETED ADD
+	}
 
 	public boolean isVisible() {
 		return visible;

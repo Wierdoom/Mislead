@@ -73,4 +73,10 @@ public class Room {
 	public void setUp(Exit up) {
 		this.up = up;
 	}
+	public void setLongDescription(String longDescription) {
+		this.longDescription = longDescription;
+	}
+	public void setShortDescription(String shortDescription) {
+		this.shortDescription = shortDescription;
+	}
 }

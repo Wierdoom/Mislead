@@ -55,8 +55,15 @@ public class Understand {
 					th1.unlock(th2);
 					Game.getTime().increment();
 					break;
+				case "use":
+					th1.use(th2);
+					Game.getTime().increment();
+					break;
+				case "photograph":
+					th1.photograph(th2);
+					Game.getTime().increment();
 				default:
-					System.out.println("Unknown command " + verb);
+					Io.out("Unknown command " + verb);
 					break;
 			}
 		}
@@ -159,8 +166,14 @@ public class Understand {
 			th.unlock();
 			Game.getTime().increment();
 			break;
+		case "use":
+			th.use();
+			Game.getTime().increment();
+		case "photograph":
+			th.photograph();
+			Game.getTime().increment();
 		default:
-			System.out.println("Unknown command " + verb);
+			Io.out("Unknown command " + verb);
 			break;
 		}
 	}

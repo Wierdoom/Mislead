@@ -12,3 +12,5 @@ public class Inventory extends Thinglist{
 		return list;
 	}
 }
+
+	
