@@ -178,9 +178,12 @@ public class LinkedList {
       		if (th.equals(front.thing)) {
          		return 0;
       		} else {
-         		while (!curr.thing.equals(th)) {
+         		while (!curr.thing.equals(th) && !curr.thing.equals(null)) {
             		index++;
             		curr= curr.next;
+         		}
+         		if (curr.equals(null) {
+         			index = -1;
          		}
       		}
       		return index;
