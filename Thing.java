@@ -5,19 +5,24 @@ public class Thing {
 		this.visible = true;
 		this.name = name;
 		this.desc = desc;
+      this.isCarryable = false;
 		Game.getParser().addNoun(name);
 	}
+   
 	public Thing(String name, String desc, String adj) {
 		this.visible = true;
 		this.name = name;
 		this.desc = desc;
 		this.adj = adj;
+      this.isCarryable = false;
 		Game.getParser().addNoun(name);
 	}
+   
 	public Thing(String name, String desc, boolean visible){
 		this.visible = visible;
 		this.name = name;
 		this.desc = desc;
+      this.isCarryable = false;
 		Game.getParser().addNoun(name);
 	}
 	public Thing(String name, String desc,boolean visible, String adj) {
@@ -25,6 +30,7 @@ public class Thing {
 		this.name = name;
 		this.desc = desc;
 		this.adj = adj;
+      this.isCarryable = false;
 		Game.getParser().addNoun(name);
 	}
 	boolean visible; // If false, does not appear in wordlist searches (is not present in the game)
@@ -33,7 +39,7 @@ public class Thing {
 	String descPicked;
    String adj; //Accompanying adjective
 	boolean isPicked;
-   
+   boolean isCarryable;
    
 	//1 VERB
 	
@@ -130,11 +136,19 @@ public class Thing {
 	}
 	public void unlock(Thing o){
 		Io.out("You don't see a lock on that.");
-	}
+	}b
 	
 	// Function for activating a thing's time property.
 	// Most objects aren't time-sensitive, so this does nothing.
-	public void tick(){}
+	public void tick(Thing th2) {
+
+   }
+   
+   //Switches two objects.
+   //Used for swapping objects once a timer is up.
+   public void switch(Thing th2) {
+      this = th2;
+   }
 
 	public boolean isVisible() {
 		return visible;

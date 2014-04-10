@@ -29,12 +29,22 @@ public class Room {
 	}
 	// Adds given thing to room's contents
 	public void add(Thing th){
-		contents.add(th);
+      if (isCarryable) {
+         carryables.add(th);
+      }
+      else {
+		   contents.add(th);
+      }
 	}
    
    // Removes a given Thing from a room's contents
    public void remove(Thing th) {
-      contents.remove(th);
+      if (isCarryable) {
+         carryables.remove(th);
+      }
+      else {
+         contents.remove(th);
+      }
    }
 	
 	public Exit getNorth() {
@@ -73,4 +83,7 @@ public class Room {
 	public void setUp(Exit up) {
 		this.up = up;
 	}
+   
+   public ThingList getCarryables() {
+      return carryables;
 }
