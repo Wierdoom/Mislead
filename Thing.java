@@ -140,7 +140,7 @@ public class Thing {
 	
 	// Function for activating a thing's time property.
 	// Most objects aren't time-sensitive, so this does nothing.
-	public void tick(Thing th2) {
+	public void tick() {
 
    }
    
