@@ -34,6 +34,12 @@ private String dryDescShort, wetDescShort, floodDescShort;
 			water.leaveWater();
 		}
 		super.enter();
+		if (getUp() instanceof SwimExit){
+			((SwimExit) getUp()).checkOpen();
+		}
+		if (getDown() instanceof SwimExit){
+			((SwimExit) getDown()).checkOpen();
+		}
 	}
 	
 	public void describe(boolean full){
