@@ -171,24 +171,38 @@ public class LinkedList {
 			System.out.println("Index error or out of bounds");
 		}
 	}
+	//Searches through the list for specified thing object
+	public int searchFor(Thing th) {
+      		Node curr = front;
+      		int index = 0;
+      		if (th.equals(front.thing)) {
+         		return 0;
+      		} else {
+         		while (!curr.thing.equals(th)) {
+            		index++;
+            		curr= curr.next;
+         		}
+      		}
+      		return index;
+   	}
 	//adds a Node to the list based on time value; larger time values are added after smaller values
-	public void addInto(int val,Thing obj) {
-		if (isEmpty()) {
-			this.addtoFront(val,obj);
+	   public void addInto(int val,Thing obj) {
+		if (isEmpty() || front.time > val) {
+			this.addtoFront(val,obj); //adds object to front if list is empty or object time is smaller than front time
+		} else if ((front.next.equals(null) && front.time < val) || getNode(size()-1).time <= val) {
+			this.addtoEnd(val,obj); //adds object to end if front is only object in list and front time is smaller OR end time at end node is smaller than object time
 		} else {
 			Node curr = front;
 			Node tmp = new Node(val,obj,null);
-			while (curr != null && curr.time <= val && curr.next != null && curr.next.time > val) {
-				curr=curr.next;
+			while (!(curr.next.time >= val)) {
+				curr = curr.next;
 			}
-			if (curr != null && !curr.next.equals(null)) {
+			if (!curr.next.equals(null)) {
 				tmp.setNext(curr.next);
 				curr.setNext(tmp);
 			} else if (curr.next.equals(null)) {
 				curr.setNext(tmp);
 			}
 		}
-
 	}
 }
-	
