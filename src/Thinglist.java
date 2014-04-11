@@ -59,4 +59,8 @@ public class Thinglist {
          }
       }
    }
+   
+   public ArrayList getContents(){
+      return contents;
+   }
 }
