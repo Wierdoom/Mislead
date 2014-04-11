@@ -1,7 +1,6 @@
 public class yBasinCenter extends WaterRoom {
 
    boolean rainwell;
-   zPart octagon;
    
    public yBasinCenter(zWater water) {
       super("Basin", "long desc", "short desc", "dry", "wet", "flood", water);
@@ -13,7 +12,7 @@ public class yBasinCenter extends WaterRoom {
    
    public enter() {
       if (rainwell) {
-         rain(); //This needs to exist.
+         rain(); //how do dis
       }
       super();
    }
