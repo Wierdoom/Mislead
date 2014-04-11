@@ -91,4 +91,14 @@ boolean in;
 		if (level<4){level++;}
 		Io.out("The trickling of water echoes all around you as the temple fills with water.");
 	}
-	}
+	//method for the lulz; causes player to drown faster
+	/*public void drink() {
+		if (!in) {
+			Io.out("Unfortunately, at the rate you're drinking you will not be able to clear the water fast enough.");
+		} else {
+			Io.out("You take a gulp of water while submerged entirely in it." + 
+			"\n Unfortunately, more water in your body is the last thing you needed in this situation and have begun drowning faster.");
+			breathCount++;
+		}
+	}*/
+	
