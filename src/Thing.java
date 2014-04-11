@@ -94,6 +94,15 @@ public class Thing {
 	public void use(){
 		Io.out("Try being more specific.");
 	}
+	public void push(){
+		Io.out("You don't manage to push it anywhere.");
+	}
+	public void pull(){
+		Io.out("You don't manage to pull it free.");
+	}
+	public void put(){
+		Io.out("Put it on what?");
+	}
 	public void photograph(){
 		if (Game.player().getInventory().has("camera")){
 			photoSuccess();
@@ -111,15 +120,15 @@ public class Thing {
 	}
 	
 	public void get(Thing o){
-		Io.out("This isn't something you can pick up and carry.");
+		Io.out("Try just getting it.");
 		// Synonym: "take", "t"
 	}
 	public void open(Thing o){
-		Io.out("You'd need to break it open first.");
+		Io.out("That can't get this open.");
 		// Synonym: "shut"
 	}
 	public void close(Thing o){
-		Io.out("You won't be able to close that.");
+		Io.out("That can't close it.");
 		// Synonym: "shut"
 	}
 	public void drink(Thing o){
@@ -151,6 +160,15 @@ public class Thing {
 	public void use(Thing o){
 		Io.out("You aren't sure how to use them together.");
 	}
+	public void push(Thing o){
+		Io.out("You can't get it to go anywhere.");
+	}
+	public void pull(Thing o){
+		Io.out("You don't manage to pull it.");
+	}
+	public void put(Thing o){
+		Io.out("That won't support that.");
+	}
 	public void photograph(Thing o){
 		if (o.getName().equals("camera")){
 			if(Game.player().getInventory().has("camera")){
@@ -164,7 +182,7 @@ public class Thing {
 	//PHOTOGRAPHY
 	// (action on successful photo)
 	
-	private void photoSuccess(){
+	public void photoSuccess(){
 		Io.out("You line up and snap a good photo of the "+name+".");
 	}
 	

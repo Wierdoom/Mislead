@@ -59,6 +59,18 @@ public class Understand {
 					th1.use(th2);
 					Game.getTime().increment();
 					break;
+				case "push":
+					th1.push(th2);
+					Game.getTime().increment();
+					break;
+				case "pull":
+					th1.pull(th2);
+					Game.getTime().increment();
+					break;
+				case "put":
+					th1.put(th2);
+					Game.getTime().increment();
+					break;
 				case "photograph":
 					th1.photograph(th2);
 					Game.getTime().increment();
@@ -169,6 +181,18 @@ public class Understand {
 		case "use":
 			th.use();
 			Game.getTime().increment();
+		case "push":
+			th.push();
+			Game.getTime().increment();
+			break;
+		case "pull":
+			th.pull();
+			Game.getTime().increment();
+			break;
+		case "put":
+			th.put();
+			Game.getTime().increment();
+			break;
 		case "photograph":
 			th.photograph();
 			Game.getTime().increment();
