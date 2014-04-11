@@ -1,4 +1,3 @@
-
 public class Door extends Thing {
 
 	public Door(String name, String desc, Exit exit) {
@@ -71,5 +70,22 @@ public class Door extends Thing {
 	}
 	public void setDoorStopsYou(String doorStopsYou) {
 		this.doorStopsYou = doorStopsYou;
+	}
+	
+	//Methods for incase the player tries to be crafty
+	public void get(){
+		Io.out("This is indeed a fine door, but you will need more than your own physical strength to remove it from its place.");
+		// Synonym: "take", "t"
+	}
+	public void drop(){
+		Io.out("Since the door is not in your possesssion, you are unable to drop it.");
+		// Synonym: "d", error this properly for two-noun case
+	}
+	public void drink(){
+		Io.out("The door is much too solid to be imbibed.");
+		// Synonym: "quaff" "imbibe"
+	}
+	public void eat(){
+		Io.out("As clever as you think it might be to eat your way through, you realize your teeth and metabolism will be unable to handle the strain.");
 	}
 }
