@@ -25,6 +25,15 @@ yEntryway entryway = new yEntryway();
 yAntechamber antechamber = new yAntechamber(water);
 new Exit(entryway,antechamber,"ew");
 
+//TOP FLOOR, halls and approach
+
+yHall hall = new yHall();
+yHallApproach approach1 = new yHallApproach(1);
+yHallApproach approach2 = new yHallApproach(2);
+
+new Exit(approach1,approach2,"we");
+new Exit(approach2,hall,"ns");
+
 //START THE GAME
 
 Io.out("A few days ago, a friend of yours doing research in the area complained to you- A logging company, ZexCo, doing some clear-cutting in the area stumbled upon an archaeological find- just from what you heard of the stonework alone, it's World Heritage Site material, and rumor is that it goes deeper still.");
