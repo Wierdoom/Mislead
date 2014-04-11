@@ -1,8 +1,8 @@
 public class Room {
 	public Room(String name, String longDescription, String shortDescription) {
-		this.name = name;
-		this.longDescription = longDescription;
-		this.shortDescription = shortDescription;
+		this.setName(name);
+		this.setLongDescription(longDescription);
+		this.setShortDescription(shortDescription);
 		visited = false;
 		contents = new Thinglist();
 		carryables = new Thinglist();
@@ -22,9 +22,9 @@ public class Room {
 		visited=true;
 	}
 	public void describe(boolean full){
-		Io.out(name);
-		if(full){Io.out(longDescription);}
-		else{Io.out(shortDescription);}
+		Io.out(getName());
+		if(full){Io.out(getLongDescription());}
+		else{Io.out(getShortDescription());}
       Io.out("\nObjects:\n");
       contents.printObjects();
 	}
@@ -93,4 +93,16 @@ public class Room {
    public Thinglist getCarryables() {
       return carryables;
    }
+public String getName() {
+	return name;
+}
+public void setName(String name) {
+	this.name = name;
+}
+public String getLongDescription() {
+	return longDescription;
+}
+public String getShortDescription() {
+	return shortDescription;
+}
 }
