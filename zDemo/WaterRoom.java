@@ -1,7 +1,7 @@
 
 public class WaterRoom extends Room {
 
-private zWater water;
+protected zWater water;
 private int wetHeight;
 private int floodHeight;
 
