@@ -61,7 +61,7 @@ public class Game extends JFrame implements ActionListener {
       setDefaultCloseOperation(EXIT_ON_CLOSE);
       setVisible(true);
 
-      //initialize sub-bits
+      //Initialise sub-bits
       initialize();
 
    }
@@ -118,7 +118,7 @@ public class Game extends JFrame implements ActionListener {
 		}
 	}
 
-	//returns the availible directions in a string
+	//returns the available directions in a string
 		public String direct(){
 
 			String dir = "\n       \n";

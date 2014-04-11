@@ -181,7 +181,6 @@ public class Thing {
 		Game.getTime().getSchedule().addInto(scheduleTime, this);
 	}
 
-	//TODO: searchfor is NOT trustworthy - will null pointer except if item is not in list
 	public void unschedule(){
 		int i = Game.getTime().getSchedule().searchFor(this);
 		Game.getTime().getSchedule().remove(i);
