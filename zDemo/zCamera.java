@@ -1,4 +1,3 @@
-
 public class zCamera extends Carryable {
 
 	// Flip this if you take a photo of something interesting
@@ -29,6 +28,8 @@ public class zCamera extends Carryable {
 		Io.out("That photo should turn a few heads when you get it developed.");
 		}
 	}
+	
+	// Statue puzzle functionality
 	
 	public void get(){
 		if(onStatue){
@@ -64,8 +65,17 @@ public class zCamera extends Carryable {
 	}
 
 	
-	
 	public void setPalm(zPalm palm) {
-		this.palm = palm;
+		this.palm = palm;}
+	
+	//misc methods
+	public void eat() {
+		Io.out("You realize your camera is much too important to be used as a light snack.");
+	}
+	public void drink() {
+		Io.out("The camera is not liquid enough to drink.");
+	}
+	public void enter(){
+		Io.out("Your camera would need to be at least three times bigger to fit you inside of it.");
 	}
 }
