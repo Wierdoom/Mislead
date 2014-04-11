@@ -94,4 +94,9 @@ private String dryDescShort, wetDescShort, floodDescShort;
 	public boolean isDry(){
 		return water.getLevel()<wetHeight;
 	}
+
+	public void setWetDesc(String wetDesc) {
+		this.wetDesc = getLongDescription()+wetDesc;
+		this.wetDescShort = getShortDescription()+wetDesc;
+	}
 }

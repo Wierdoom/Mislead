@@ -60,7 +60,7 @@ public class Thinglist {
       }
    }
    
-   public ArrayList getContents(){
+   public ArrayList<Thing> getContents(){
       return contents;
    }
 }

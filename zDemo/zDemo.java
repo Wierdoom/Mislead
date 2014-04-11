@@ -11,6 +11,7 @@ Io.setGame(game);
 //Create the water and the rain
 	
 zWater water = new zWater();
+zRain rain = new zRain(water);
 	
 //Create the first few rooms
 	
@@ -24,6 +25,18 @@ yEntryway entryway = new yEntryway();
 //ANTECHAMBER
 yAntechamber antechamber = new yAntechamber(water);
 new Exit(entryway,antechamber,"ew");
+
+//BASIN
+
+zPillar pillar = new zPillar();
+yBasinCenter center1 = new yBasinCenter(water,rain,pillar);
+yBasinCenter center2 = new yBasinCenter(water,rain,pillar);
+yBasinSide side1 = new yBasinSide(water, rain, 1);
+yBasinSide side2 = new yBasinSidePillars(water, rain);
+yBasinSide side3 = new yBasinSide(water, rain, 3);
+yBasinSide side4 = new yBasinSide(water, rain, 4);
+
+//TODO connect with exits
 
 //TOP FLOOR, halls and approach
 
