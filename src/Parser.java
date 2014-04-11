@@ -11,6 +11,8 @@ private ArrayList<String> verbList;
 private ArrayList<String> prepositionList;
 	
 	public Parser(){
+		
+		//List of all verbs. If you add a verb, it needs to go here! (And in Understand, and in Thing)
 		String[] verbSet = {"look","get","drop","open","close","drink","eat","hit","read","go","enter","lock","unlock","north","south","east","west","up","down","i","use","photograph"};
 		String[] prepositionSet = {"on","with","using","at"}; // not complete, add as make sense
 		nounList = new ArrayList<String>();
@@ -30,11 +32,25 @@ private ArrayList<String> prepositionList;
 		boolean valid = true;
 		while(!stack.isEmpty()&&valid){
 			nextWord = stack.pop();
-			if (isVerb(nextWord)){Understand.understand(nextWord,object,secondary);}
+			
+			//If verb, performs action and stops interpreting the command
+			if (isVerb(nextWord)){Understand.understand(nextWord,object,secondary);
+				valid=false;}
+			
+			//If preposition, moves object into secondary object field
 			else if (isPreposition(nextWord)){secondary=object; object=null;}
-			else if (isNoun(nextWord)){object=findObject(nextWord);}
+			
+			//If noun, that's the target of the action, the object.
+			//If it can't find the object in inventory or in environment,
+			//Action fails with "can't see the x here" error".
+			else if (isNoun(nextWord)){object=findObject(nextWord);
+				if (object==null){
+					Io.out("I don't see the "+nextWord+" here.");
+					valid = false;
+				}}
+			//Stops if it sees a word it can't understand.
 			else {valid = false;
-				Io.out("[Couldn't find valid command in line "+in+" ]");}
+				Io.out("I saw a word I don't understand in line "+in+" - Possibly an action this game doesn't require, or something in the description you won't need to interact with.");}
 		}
 	}
 		
@@ -51,6 +67,7 @@ private ArrayList<String> prepositionList;
 		return prepositionList.contains(word);
 	}	
 
+	// Finds an object by hunting in the inventory and in the player's room.
 	private Thing findObject(String word){
 		Thing target = null;
 		target = Game.player().getInventory().find(word);
@@ -58,6 +75,7 @@ private ArrayList<String> prepositionList;
 		return target;
 	}
 	
+	//Adds a noun to the nounList. Whenever the game has a new noun, call this!
 	public void addNoun (String noun){
 		nounList.add(noun);
 	}
