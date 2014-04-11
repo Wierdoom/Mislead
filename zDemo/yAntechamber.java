@@ -16,6 +16,7 @@ public class yAntechamber extends WaterRoom {
 		zFirepit firepit = new zFirepit();
 		add(torch);
 		add(firepit);
+		setWetHeight(3);
 		
 		//test lighting the torch
 		
