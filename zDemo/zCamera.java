@@ -1,4 +1,3 @@
-
 public class zCamera extends Carryable {
 
 	public zCamera() {
@@ -10,5 +9,15 @@ public class zCamera extends Carryable {
 	}
 	public void use (Thing o){
 		o.photograph();
+	}
+	//misc methods
+	public void eat() {
+		Io.out("You realize your camera is much too important to be used as a light snack.");
+	}
+	public void drink() {
+		Io.out("The camera is not liquid enough to drink.");
+	}
+	public void enter(){
+		Io.out("Your camera would need to be at least three times bigger to fit you inside of it.");
 	}
 }
