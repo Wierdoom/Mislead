@@ -112,7 +112,7 @@ public class Game extends JFrame implements ActionListener {
       }
       else{
          textField.setForeground(Color.RED);
-         textField.setText("-DARK SOULS-");
+         textField.setText("YOU LOST!");
       }
    }
 
