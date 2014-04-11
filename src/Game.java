@@ -18,7 +18,9 @@ public class Game extends JFrame implements ActionListener {
    private JLabel label;
    private JTextPane textPane;
    private JScrollPane scrollPane;
-
+   
+   // For gameover functionality.
+   public static Game end;
 
    public Game(){
       panel = new JPanel();
@@ -64,6 +66,9 @@ public class Game extends JFrame implements ActionListener {
 
       //Initialise sub-bits
       initialize();
+      
+      // For gameover functionality.
+      end = this;
    }
 
    //what happens when the user pressed enter
@@ -107,7 +112,7 @@ public class Game extends JFrame implements ActionListener {
       }
       else{
          textField.setForeground(Color.RED);
-         textField.setText("GAME OVER");
+         textField.setText("-DARK SOULS-");
       }
    }
 

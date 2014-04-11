@@ -51,11 +51,12 @@ public class zPalm extends Thing {
 				flatten();
 			}
 		}
-		
 	}
 	
 	// Kill the player.
-	private void flatten(){}
+	private void flatten(){
+      end.gameOver(false);
+   }
 
 	public Thing getHeld() {
 		return held;

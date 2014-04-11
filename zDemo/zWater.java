@@ -73,6 +73,7 @@ boolean in;
 	
 	public void tick(){
 		if(breathCount++>3){
+         Io.out("You feel your strength leave you as your lungs constrict, desperate for air. Tonight you sleep with the fishes.");
 			drown();
 		}
 		else if (breathCount>1){
@@ -85,7 +86,7 @@ boolean in;
 		}
 	}
 	private void drown(){
-		//end the game by drowning
+		end.gameOver(false);
 	}
 	public void raiseLevel(){
 		if (level<4){level++;}
