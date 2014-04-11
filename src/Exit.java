@@ -77,4 +77,7 @@ public class Exit{
 	public void setSide2(Room side2) {
 		this.side2 = side2;
 	}
+   public boolean isOpen(){
+      return open;
+   }
 }
