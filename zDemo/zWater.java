@@ -1,6 +1,6 @@
 // Water is a specific sort of thing that's
 // 1. NOT VISIBLE
-// 2. THINGS REFERENCE TO DETERMINE WHERE THEY ARE
+// 2. THINGS REFERENCE TO DETERMINE HOW MUCH WATER THEY'RE UNDER
 // 3. KILLS YOU IF YOU SPEND TOO LONG UNDER IT
 
 // rooms call enter / leave-water
@@ -87,4 +87,8 @@ boolean in;
 	private void drown(){
 		//end the game by drowning
 	}
-}
+	public void raiseLevel(){
+		if (level<4){level++;}
+		Io.out("The trickling of water echoes all around you as the temple fills with water.");
+	}
+	}

@@ -57,6 +57,16 @@ private String dryDescShort, wetDescShort, floodDescShort;
 		}
 		super.describe(full);
 	}
+	
+	//Called on a room when the water rises in it, dunking you into the water.
+	public void waterRise(){
+		if(water.getLevel()==floodHeight){
+			Io.out("The rising water fills the room, forcing you to swim.");
+			water.enterWater();}
+		if(water.getLevel()==wetHeight){
+			Io.out("Rising water seeps into the room, steadily climbing.");
+		}
+		}
 
 	public int getWetHeight() {
 		return wetHeight;

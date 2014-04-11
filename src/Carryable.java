@@ -41,6 +41,13 @@ public class Carryable extends Thing {
 		}
 		else{Io.out("No point in getting it now.");}
 	}
+	
+	public void push(){
+		Io.out("No need to shove it about - just GET it.");
+	}
+	public void pull(){
+		Io.out("No need to drag it around - just GET it.");
+	}
    
    // Returns whether or not the object can be carried.
    public boolean getCarryable() {
