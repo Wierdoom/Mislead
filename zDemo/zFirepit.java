@@ -8,8 +8,13 @@ public class zFirepit extends Thing {
 
 	
 	// If you hit the firepit with the torch, light the torch.
-	public void hit(zTorch t){
-		t.light();
+	public void hit(Thing o){
+		if (o instanceof zTorch){
+		((zTorch) o).light();
+		}
+		else{
+			super.hit(o);
+		}
 	}
 	
 	}
