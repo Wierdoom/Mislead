@@ -23,5 +23,6 @@ public class TestWrapper {
       r2.getContents().add(liver);
       r1.getContents().add(key);
 		r1.enter();
+		
 	}
 }

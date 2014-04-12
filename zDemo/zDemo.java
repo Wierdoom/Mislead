@@ -72,6 +72,7 @@ new Exit(tower3,controlroom,"ud");
 
 yHall hall = new yHall();
 yHallApproach approach1 = new yHallApproach(1);
+approach1.setWater(water); // so it can call leaveWater();
 yHallApproach approach2 = new yHallApproach(2);
 
 new Exit(approach1,approach2,"we");

@@ -192,52 +192,31 @@ public class LinkedList {
       		return index;
    	}
       
-         public void addInto(int value, Thing timer) {
-            if (this.isEmpty() || value < front.getTime()) {
-               this.addtoFront(value, timer);
-            }
-            
-            else if (value > front.getTime()) {
-               this.addtoEnd(value, timer);
-            }
-            
-            else {
-               Node point = front.getNext();
-               for (int i = 0; i < this.size(); i++) {
-                  if (point.getTime() > value) {
-                     this.add(i, value, timer);
-                  }
-                  
-                  if (frontpoint.getNext == null) {
-                     this.addtoEnd(value, timer);
-                     return;
-                  }
-                  point = point.getNext();
-               }
-            }
-         }
-      
-// 	// adds a Node to the list based on time value; larger time values are added after smaller values
-// 	   public void addInto(int val, Thing obj) {
-// 		if (this.isEmpty() || front.time > val) {
-// 			this.addtoFront(val,obj); //adds object to front if list is empty or object time is smaller than front time
-// 		}
-//       else if ((front.next.equals(null) && front.time < val) || getNode(size()-1).getTime() < val) {
-// 			this.addtoEnd(val,obj); //adds object to end if front is only object in list and front time is smaller OR end time at end node is smaller than object time
-// 		}
-//       else {
-// 			Node curr = front;
-// 			Node tmp = new Node(val,obj,null);
-// 			while (!(curr.next.time >= val)) {
-// 				curr = curr.next;
-// 			}
-// 			if (!curr.next.equals(null)) {
-// 				tmp.setNext(curr.next);
-// 				curr.setNext(tmp);
-// 			} 
-//          else if (curr.next.equals(null)) {
-// 				curr.setNext(tmp);
-// 			}
-// 		}
-// 	}
+		public void addPreservingOrder(int value, Thing timer){
+			Node newNode = new Node(value,timer);
+			Node curr1, curr2;
+			curr1 = front;
+			
+			//If the list is empty, we simply add the new node.
+			if(front == null||front.getTime()>value){
+				newNode.setNext(front);
+				front = newNode;
+				
+			}
+			//If the list is not empty, we move two pointers forward
+			// until the second pointer is either to somewhere
+			// non-existent, or higher-time valued than the node we are adding.
+			// When this occurs, we splice the new node in between the two pointers.
+			else{
+				curr2 = curr1.getNext();
+				while(curr2!=null&&curr2.getTime()<value){
+					curr1=curr2;
+					curr2=curr1.getNext();
+				}
+				newNode.setNext(curr2);
+				curr1.setNext(newNode);
+			
+				
+			}
+		}
 }

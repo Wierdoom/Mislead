@@ -10,6 +10,10 @@ public class Node {
 		thing=th;
 		next=n;
 	}
+	public Node(int ti, Thing th) {
+		time = ti;
+		thing = th;
+	}
 	//Set and get Methods
 	public void setTime(int t){
 		time=t;

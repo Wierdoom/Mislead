@@ -196,7 +196,7 @@ public class Thing {
 	// Adds the thing to the schedule, to activate in t turns
 	public void schedule(int t){
 		int scheduleTime = Game.getTime().getTime()+t;
-		Game.getTime().getSchedule().addInto(scheduleTime, this);
+		Game.getTime().getSchedule().addPreservingOrder(scheduleTime, this);
 	}
 
 	public void unschedule(){
