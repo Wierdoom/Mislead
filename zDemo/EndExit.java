@@ -10,11 +10,11 @@ public class EndExit extends Exit {
    public void Travel() {
       if (isOpen() && confirm) {
          if (Game.player().getInventory().has("camera")) {
-            if (Game.player().getInventory().has("cylinder") && Game.player().getInventory().find("camera").getInterestingPhoto()) {
+            if (Game.player().getInventory().has("cylinder") && ((zCamera) Game.player().getInventory().find("camera")).isInterestingPhoto()) {
                Io.out("You not only managed to get some interesting photos, but also escaped with an ancient artifact. This should be more than enough evidence for your employers.");
                Game.end.gameOver(true);
             }
-            else if (Game.player().getInventory().find("camera").getInterestingPhoto()) {
+            else if (((zCamera) Game.player().getInventory().find("camera")).isInterestingPhoto()) {
                Io.out("You didn't manage to take anything with you save some pretty interesting photos that should prove useful when you return to your employers.");
                Game.end.gameOver(true);
             }
