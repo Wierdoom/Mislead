@@ -25,18 +25,14 @@ public class Room {
 		Io.out(getName());
 		if(full){Io.out(getLongDescription());}
 		else{Io.out(getShortDescription());}
-      Io.out("\nObjects:\n");
-      contents.printObjects();
 	}
 	// Adds given thing to room's contents
 	public void add(Thing th){
       if (th.getCarryable()) {
          carryables.add(th);
       }
-      else {
-		   contents.add(th);
+		 contents.add(th);
       }
-	}
    
    // Removes a given Thing from a room's contents
    public void remove(Thing th) {
