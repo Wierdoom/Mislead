@@ -48,6 +48,13 @@ yTowerRoom tower1 = new yTowerRoom(water,true);
 yTowerRoom tower2 = new yTowerRoom(water,true);
 yTowerRoom tower3 = new yTowerRoom(water,false);
 
+tower1.setWetHeight(2);
+tower2.setWetHeight(3);
+tower3.setWetHeight(4);
+
+tower1.setFloodHeight(3);
+tower2.setFloodHeight(4);
+
 pillar.setCenterMed(center1);
 side2.add(pillar);
 

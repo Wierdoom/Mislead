@@ -48,11 +48,12 @@ public class Exit{
 	private String closedReason; //If it's closed,
 	// this is the text that gets printed when you fail to travel across
 	
+	//Moves the player from one side of the exit to the other side of the exit.
 	public void travel(){
 		if (open){
 		if (Game.player().getLocation()==side1){side2.enter();}
 		else if (Game.player().getLocation()==side2){side1.enter();}
-		// else, that is not how exits work.
+		// if they are not on either side, that is not how exits work.
 		}
 		else{Io.out(closedReason);}
 	}

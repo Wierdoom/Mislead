@@ -87,9 +87,8 @@ boolean in;
 			schedule(5);
 		}
 	}
-	//TODO rectify
 	private void drown(){
-	//	end.gameOver(false);
+		Game.end.gameOver(false);
 	}
 	public void raiseLevel(){
 		if (level<4){level++;}

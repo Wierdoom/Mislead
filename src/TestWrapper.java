@@ -14,7 +14,7 @@ public class TestWrapper {
 		new Exit(r2,r3,"ns");
 		new Exit(r3,r4,"we");
 		Thing snake = new Thing("snake","The world-serpent, Jormungand, whose ancient flesh supports the firmament of the world.");
-		Carryable liver = new Carryable("liver", "It's a fucking liver, bro.", "It's a fucking liver, dude.");
+		Carryable liver = new Carryable("liver", "It's a liver, bro.", "It's a liver, dude.");
 		Carryable key = new Carryable("key","A golden key.","A golden key lies here.");
       Door gate = new Door("door","A tremendous stone door sits between you and passage further north.",r2.getNorth());
       LockedDoor gate2 = new LockedDoor("door2","A locked door. Might wanna key that one up.",r3.getWest(),key);
@@ -23,6 +23,15 @@ public class TestWrapper {
       r2.getContents().add(liver);
       r1.getContents().add(key);
 		r1.enter();
-		
-	}
+	
+		LinkedList ll = new LinkedList();
+		ll.addPreservingOrder(1, liver);
+		ll.addPreservingOrder(1, liver);
+		ll.addPreservingOrder(2, liver);
+		ll.addPreservingOrder(3, liver);
+		ll.addPreservingOrder(2, key);
+		ll.enumerate();
+		System.out.println();
+		ll.searchAndDestroy(key);
+		ll.enumerate();	}
 }

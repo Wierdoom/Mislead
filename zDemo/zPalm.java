@@ -55,7 +55,7 @@ public class zPalm extends Thing {
 	
 	// TODO Kill the player.
 	private void flatten(){
-      //end.gameOver(false);
+      Game.end.gameOver(false);
    }
 
 	public Thing getHeld() {

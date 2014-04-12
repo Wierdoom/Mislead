@@ -171,27 +171,19 @@ public class LinkedList {
 			System.out.println("Index error or out of bounds");
 		}
 	}
-	//Searches through the list for specified thing object
-	public int searchFor(Thing th) {
-      		Node curr = front;
-
-      		int index = 0;
-      		if (curr != null){
-      		if (th.equals(front.thing)) {
-         		return 0;
-      		} else {
-         		while (!curr.thing.equals(th) && !curr.thing.equals(null)) {
-            		index++;
-            		curr= curr.next;
-         		}
-      		}
-         		if (curr.equals(null)) {
-         			index = -1;
-         		}
-      		}
-      		return index;
-   	}
-      
+	//Searches through the list for nodes with that thing and eliminates them.
+	//This doesn't update the count, because we never use the count.
+	
+	public void searchAndDestroy(Thing th){
+		Node curr;
+		while(front!=null&&front.getThing() == th){front=front.getNext();}
+		curr=front;
+		while(curr!=null){
+			while(curr.getNext()!=null&&curr.getNext().getThing() == th){curr.setNext(curr.getNext().getNext());}
+			curr = curr.getNext();}
+		}
+	
+      // Add an entry to the list while keeping it sorted.
 		public void addPreservingOrder(int value, Thing timer){
 			Node newNode = new Node(value,timer);
 			Node curr1, curr2;

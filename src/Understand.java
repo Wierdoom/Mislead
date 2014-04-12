@@ -199,6 +199,7 @@ public class Understand {
 		case "photograph":
 			th.photograph();
 			Game.getTime().increment();
+			break;
 		default:
 			Io.out("Unknown command " + verb);
 			break;

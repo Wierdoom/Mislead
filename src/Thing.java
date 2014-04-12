@@ -200,16 +200,9 @@ public class Thing {
 	}
 
 	public void unschedule(){
-		int i = Game.getTime().getSchedule().searchFor(this);
-		Game.getTime().getSchedule().remove(i);
+		Game.getTime().getSchedule().searchAndDestroy(this);
 	}
    
-   //Switches two objects.
-   //Used for swapping objects once a timer is up.
-   /*this doesn't work, you need to flip this object visible=false and replace it with something else like that*/
-   /*public void switch(Thing th2) {
-      this = th2;
-   }*/
 
 	public boolean isVisible() {
 		return visible;
