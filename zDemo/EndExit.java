@@ -9,12 +9,18 @@ public class EndExit extends Exit {
    
    public void Travel() {
       if (isOpen() && confirm) {
-         if (Game.player().getInventory().has("cylinder") && Game.player().getInventory().find("camera").getInterestingPhoto()) {
-            Io.out("You got out with a swaggin' artifact and a photograph of a damn neat thing. Swiggity swooty you got the booty!");
-            Game.end.gameOver(true);
+         if (Game.player().getInventory().has("camera")) {
+            if (Game.player().getInventory().has("cylinder") && Game.player().getInventory().find("camera").getInterestingPhoto()) {
+               Io.out("You not only managed to get some interesting photos, but also escaped with an ancient artifact. This should be more than enough evidence for your employers.");
+               Game.end.gameOver(true);
+            }
+            else if (Game.player().getInventory().find("camera").getInterestingPhoto()) {
+               Io.out("You didn't manage to take anything with you save some pretty interesting photos that should prove useful when you return to your employers.");
+               Game.end.gameOver(true);
+            }
          }
          else if (Game.player().getInventory().has("cylinder")) {
-            Io.out("You got out with a neat thing. Woo!");
+            Io.out("You managed to escape with an amazing artifact from the complex. Snapping some more interesting photos would have been nice, but this cylinder should definitely be enough.");
             Game.end.gameOver(true);
          }
          else {
