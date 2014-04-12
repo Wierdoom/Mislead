@@ -34,6 +34,7 @@ boolean in;
 	// Function for going below water
 	public void enterWater(){
 		if(!in){
+		Io.out("You dive into the deep water as you continue on.");
 		in = true;
 		schedule(5);
 		
@@ -49,6 +50,7 @@ boolean in;
 	// Call this function when you're swimming in the water.
 	// Torches go out, but you don't need to worry about breathing.
 	public void swim(){
+		Io.out("You swim on the surface of the water.");
 		Thing torch = Game.player().getInventory().find("torch");
 		if (torch instanceof zTorch){
 			// We have promised that the torch is indeed the zTorch, so we're good

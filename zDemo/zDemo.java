@@ -11,7 +11,7 @@ Io.setGame(game);
 //Create the water and the rain
 	
 zWater water = new zWater();
-water.setLevel(3);
+water.setLevel(2);
 zRain rain = new zRain(water);
 	
 //Create the first few rooms
