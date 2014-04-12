@@ -21,7 +21,7 @@ public class yBasinCenter extends WaterRoom {
 		if(pillar.isFallen()&&isWet()){
 			Io.out("...If it weren't for the pillar you're standing on, that is.");}
 		if(rain.isOpenToRain()){
-			Io.out("The roof of the basin has open, letting the pouring rain come down onto you.");
+			Io.out("The roof of the basin has opened, letting the pouring rain come down onto you.");
 		}
 	}
 		

@@ -6,10 +6,10 @@ public class yBasinSide extends WaterRoom {
 	public yBasinSide(zWater water, zRain rain, int number) {
 		super("Basin Side", "A short stone ledge that overlooks a huge reservoir "
 				+ "at the heart of the tunnel systems, a huge cylindrical"
-				+ "basin wrought from dark stone.", 
+				+ " basin wrought from dark stone.", 
 				"A ledge overlooking the basin.", 
-				"The water-level is far beneath the ledge, now.", "The water rises gently"
-						+ " over the ledge, filling the basin.", "You swim through"
+				" The water-level is far beneath the ledge, now.", " The water rises gently"
+						+ " over the ledge, filling the basin.", " You swim through"
 								+ " murky water.", water);
 		this.rain = rain;
 		String exitAppend = "";

@@ -50,7 +50,8 @@ public class zRain extends Thing {
 
 	public void setOpenToRain(boolean openToRain) {
 		this.openToRain = openToRain;
-		//TODO have this schedule / unschedule the rain appropriately
+		if (raining()){schedule(6);}
+		else{unschedule();}
 	}
 
 	public boolean isRainCanGather() {
@@ -59,7 +60,8 @@ public class zRain extends Thing {
 
 	public void setRainCanGather(boolean rainCanGather) {
 		this.rainCanGather = rainCanGather;
-		//TODO have this schedule / unschedule the rain appropriately
+		if (raining()){schedule(6);}
+		else{unschedule();}
 	}
 	
 	
