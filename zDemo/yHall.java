@@ -16,6 +16,8 @@ public class yHall extends Room {
 		zCylinder cylinder = new zCylinder();
 		palm = new zPalm(cylinder);
 		cylinder.setPalm(palm);
+		add(cylinder);
+		add(palm);
 	}
 
 	

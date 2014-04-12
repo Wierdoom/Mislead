@@ -12,6 +12,8 @@ public class zRain extends Thing {
 	public zRain(zWater water) {
 		super("rain", "", false);
 		this.water = water;
+		openToRain = false;
+		rainCanGather = true;
 	}
 
 	// True if rain is gathering in the basin
