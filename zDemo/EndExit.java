@@ -1,29 +1,27 @@
 public class EndExit extends Exit {
    
    boolean confirm;
-   Player player;
    
-   public EndExit(Room side1, Room side2, Player p) {
+   public EndExit(Room side1, Room side2) {
       super(side1, side2);
       confirm = false;
-      player = p;
    }
    
    public void Travel() {
-      if (open && confirm) {
-         if (player.getInventory().has("cylinder") && player.getInventory().find("camera").getInterestingPhoto()) {
+      if (isOpen() && confirm) {
+         if (Game.player().getInventory().has("cylinder") && Game.player().getInventory().find("camera").getInterestingPhoto()) {
             Io.out("You got out with a swaggin' artifact and a photograph of a damn neat thing. Swiggity swooty you got the booty!");
-            end.gameOver(true);
+            Game.end.gameOver(true);
          }
-         else if (player.getInventory().has("cylinder")) {
+         else if (Game.player().getInventory().has("cylinder")) {
             Io.out("You got out with a neat thing. Woo!");
-            end.gameOver(true);
+            Game.end.gameOver(true);
          }
          else {
             Io.out("You got out but didn't manage to find anything. Oh well, at least you're alive.");
-            end.gameOver(false);
-         }
-      else if (open) {
+            Game.end.gameOver(false);
+         }}
+      else if (isOpen()) {
          Io.out("Are you sure to want to leave this place? Type that again if you are.");
          confirm = true;
       }

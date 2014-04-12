@@ -1,10 +1,10 @@
 public class zCamera extends Carryable {
 
 	// Flip this if you take a photo of something interesting
-	boolean interestingPhoto;
+	private boolean interestingPhoto;
 	
 	// Functionality for being a weight on the statue
-	boolean onStatue;
+	private boolean onStatue;
 	zPalm palm;
 	
 	public zCamera() {
