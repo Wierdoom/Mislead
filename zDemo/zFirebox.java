@@ -23,8 +23,11 @@ public class zFirebox extends Thing {
 		}
 	}
 	// if you hit it with the torch, try using the torch on it
-	public void hit(zTorch t){
-		t.use(this);
+	public void hit(Thing o){
+		if(o instanceof zTorch){
+			o.use(this);
+		}
+		else{super.hit(o);}
 	}
 	
 
