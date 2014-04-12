@@ -13,7 +13,7 @@ private ArrayList<String> prepositionList;
 	public Parser(){
 		
 		//List of all verbs. If you add a verb, it needs to go here! (And in Understand, and in Thing)
-		String[] verbSet = {"look","get","drop","open","close","drink","eat","hit","read","go","enter","lock","push","pull","put","unlock","north","south","east","west","up","down","i","use","photograph"};
+		String[] verbSet = {"look","get","drop","open","close","drink","eat","hit","read","go","enter","lock","push","pull","put","unlock","north","south","east","west","up","down","i","use","photograph","wait"};
 		String[] prepositionSet = {"on","with","using","at"}; // not complete, add as make sense
 		nounList = new ArrayList<String>();
 		verbList = new ArrayList<String>();

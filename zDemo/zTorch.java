@@ -27,6 +27,18 @@ public class zTorch extends Carryable {
 		if (o instanceof zFirepit){
 		light();
 		}
+		else if(o instanceof zFirebox){
+			if (lit){
+				((zFirebox) o).light();
+			}
+			else if(((zFirebox) o).isLit()){
+				light();
+			}
+			else{
+				
+				Io.out("You could probably light this, if your torch was burning.");
+			}
+		}
 		else{
 			Io.out("You rub a bit of the tar on the "+o.getName()+", to no effect.");
 		}
@@ -45,7 +57,7 @@ public class zTorch extends Carryable {
 	
 	public void extinguish(){
 		if(lit){
-		Io.out("The water puts out the flame with a hiss of steam - still no smoke.");
+		Io.out("The water puts out the flame of the torch with a hiss of steam - still no smoke.");
 		lit = false;}
 	}
 	

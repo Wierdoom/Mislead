@@ -8,6 +8,7 @@ private int floodHeight;
 //descriptions for each of three water states
 private String dryDesc, wetDesc, floodDesc;
 private String dryDescShort, wetDescShort, floodDescShort;
+private String dry, wet, flood;
 	
 	public WaterRoom(String name, String longDescription,
 			String shortDescription, String dry, String wet, String flood, zWater water) {
@@ -16,12 +17,15 @@ private String dryDescShort, wetDescShort, floodDescShort;
 		floodHeight = 5; // puts out of bounds
 		this.water = water;
 		
+		this.dry = dry;
 		dryDesc = longDescription+" "+dry;
 		dryDescShort = shortDescription+" "+dry;
 		
+		this.wet = wet;
 		wetDesc = longDescription+" "+wet;
 		wetDescShort = shortDescription+" "+wet;
 		
+		this.flood = flood;
 		floodDesc = longDescription+" "+flood;
 		floodDescShort = shortDescription+" "+flood;
 	}
@@ -35,27 +39,35 @@ private String dryDescShort, wetDescShort, floodDescShort;
 		}
 		super.enter();
 		if (getUp() instanceof SwimExit){
-			((SwimExit) getUp()).checkOpen();
+			((SwimExit) getUp()).isOpen();
 		}
 		if (getDown() instanceof SwimExit){
-			((SwimExit) getDown()).checkOpen();
+			((SwimExit) getDown()).isOpen();
 		}
 	}
 	
+	/*
 	public void describe(boolean full){
-		if(isFlooded()){
-			setLongDescription(floodDesc);
-			setShortDescription(floodDescShort);		
-		}
-		else if(isWet()){
-			setLongDescription(wetDesc);
-			setShortDescription(wetDescShort);
+		Io.out(getName());
+		if(full){Io.out(getLongDescription());}
+		else{Io.out(getShortDescription());}
+	}
+	*/
+	
+	
+	
+	public void describe(boolean full){
+		if(full){
+			if(isFlooded()){Io.out(floodDesc);}
+			else if(isWet()){Io.out(wetDesc);}
+			else {Io.out(dryDesc);}
 		}
 		else{
-			setLongDescription(dryDesc);
-			setShortDescription(dryDescShort);
+			if(isFlooded()){Io.out(floodDescShort);}
+			else if(isWet()){Io.out(wetDescShort);}
+			else {Io.out(dryDescShort);}
 		}
-		super.describe(full);
+		
 	}
 	
 	//Called on a room when the water rises in it, dunking you into the water.
@@ -98,5 +110,26 @@ private String dryDescShort, wetDescShort, floodDescShort;
 	public void setWetDesc(String wetDesc) {
 		this.wetDesc = getLongDescription()+wetDesc;
 		this.wetDescShort = getShortDescription()+wetDesc;
+	}
+	public void setDryDesc(String dryDesc) {
+		this.wetDesc = getLongDescription()+dryDesc;
+		this.wetDescShort = getShortDescription()+dryDesc;
+	}
+	public void setFloodDesc(String floodDesc) {
+		this.wetDesc = getLongDescription()+floodDesc;
+		this.wetDescShort = getShortDescription()+floodDesc;
+	}
+	
+	public void setLongDescription(String str){
+		super.setLongDescription(str);
+		setWetDesc(wet);
+		setDryDesc(dry);
+		setFloodDesc(flood);
+	}
+	public void setShortDescription(String str){
+		super.setShortDescription(str);
+		setWetDesc(wet);
+		setDryDesc(dry);
+		setFloodDesc(flood);
 	}
 }

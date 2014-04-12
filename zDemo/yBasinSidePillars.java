@@ -5,6 +5,8 @@ public class yBasinSidePillars extends yBasinSide {
 		super(water, rain, 2);
 		setLongDescription(getLongDescription()+"The remains of black pillars, pitted, pumice-like, stand here - three of them.");
 		setWetDesc("Even the largest fragments of the pillars that once stood here float and shift easily on the standing water.");
+		setDryDesc("Fragments of the pillars litter the ground.");
+		setFloodDesc("Murky water rises all around.");
 	}
 	
 	public void describe(boolean full){

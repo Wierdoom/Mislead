@@ -108,6 +108,9 @@ public class Understand {
 			Game.player().down();
 			Game.getTime().increment();
 			break;
+		case "wait":
+			Game.getTime().increment();
+			break;
 		case "look":
 			Game.player().getLocation().describe(true);
 			break;
