@@ -39,9 +39,8 @@ public class Room {
       if (th.getCarryable()) {
          carryables.remove(th);
       }
-      else {
+ 
          contents.remove(th);
-      }
    }
 	
 	public Exit getNorth() {
