@@ -20,7 +20,10 @@ zRain rain = new zRain(water);
 	
 	
 //ENTRYWAY
-yEntryway entryway = new yEntryway(); 	
+yEntryway entryway = new yEntryway(); 
+
+EndExit leave = new EndExit(entryway,entryway);
+entryway.setWest(leave);
 
 
 //ANTECHAMBER

@@ -7,7 +7,7 @@ public class EndExit extends Exit {
       confirm = false;
    }
    
-   public void Travel() {
+   public void travel() {
       if (isOpen() && confirm) {
          if (Game.player().getInventory().has("camera")) {
             if (Game.player().getInventory().has("cylinder") && ((zCamera) Game.player().getInventory().find("camera")).isInterestingPhoto()) {
@@ -21,6 +21,10 @@ public class EndExit extends Exit {
                Io.out("Camera full of choice photos, you start your voyage back to the city. Once they're published, ZexCo will be falling over themselves to position themselves as proud to honor your nation's heritage.");
                Io.out("Or, well, however they decide to backtrack on it.");
                Game.end.gameOver(true);
+            }
+            else {
+            	Io.out("You leave the tunnel behind, forging back towards the trail.");
+                Game.end.gameOver(false);
             }
          }
          else if (Game.player().getInventory().has("cylinder")) {
