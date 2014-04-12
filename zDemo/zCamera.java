@@ -78,4 +78,12 @@ public class zCamera extends Carryable {
 	public void enter(){
 		Io.out("Your camera would need to be at least three times bigger to fit you inside of it.");
 	}
+   
+   // Overrides the original photoSuccess method to flip the interestingPhoto boolean.
+   public void photoSuccess(Thing that) {
+		Io.out("You line up and snap a good photo of the " + that.getName() + ".");
+      if (that.getName().equals("cylinder")) {
+         bigScoop();
+      }
+	}
 }
