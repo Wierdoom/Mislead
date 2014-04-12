@@ -58,8 +58,8 @@ new PitExit(side3,center2,"ew");
 new PitExit(side4,center2,"we");
 new SwimExit(center1,center2);
 
-new Exit(side2,tower1,"we");
-new Exit(side4,tower1,"we");
+new Exit(side2,tower1,"ew");
+new Exit(side4,tower2,"ew");
 
 new Exit(tower1,tower2,"ud");
 new Exit(tower2,tower3,"ud");

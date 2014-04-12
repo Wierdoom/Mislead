@@ -7,7 +7,7 @@ public class Io{
 static private Game game;
 static Scanner sc = new Scanner(System.in);
 		public static void out(String str){
-			game.println(str);
+			game.println(str+"\n");
 		}
 		public static String a(String str){
 		String r;

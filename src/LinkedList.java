@@ -174,7 +174,9 @@ public class LinkedList {
 	//Searches through the list for specified thing object
 	public int searchFor(Thing th) {
       		Node curr = front;
+
       		int index = 0;
+      		if (curr != null){
       		if (th.equals(front.thing)) {
          		return 0;
       		} else {
@@ -182,6 +184,7 @@ public class LinkedList {
             		index++;
             		curr= curr.next;
          		}
+      		}
          		if (curr.equals(null)) {
          			index = -1;
          		}

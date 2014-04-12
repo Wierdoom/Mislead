@@ -33,5 +33,9 @@ public class zFirebox extends Thing {
 	public boolean isLit() {
 		return lit;
 	}
+
+	public void setLever(zControlLever lever) {
+		this.lever = lever;
+	}
 }
 
