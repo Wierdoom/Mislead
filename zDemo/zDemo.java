@@ -44,6 +44,10 @@ yBasinSide side2 = new yBasinSidePillars(water, rain);
 yBasinSide side3 = new yBasinSide(water, rain, 3);
 yBasinSide side4 = new yBasinSide(water, rain, 4);
 
+yTowerRoom tower1 = new yTowerRoom(water,true);
+yTowerRoom tower2 = new yTowerRoom(water,true);
+yTowerRoom tower3 = new yTowerRoom(water,false);
+
 pillar.setCenterMed(center1);
 side2.add(pillar);
 
@@ -54,7 +58,15 @@ new PitExit(side3,center2,"ew");
 new PitExit(side4,center2,"we");
 new SwimExit(center1,center2);
 
-//TODO connect with exits
+new Exit(side2,tower1,"we");
+new Exit(side4,tower1,"we");
+
+new Exit(tower1,tower2,"ud");
+new Exit(tower2,tower3,"ud");
+
+//CONTROL ROOM
+yControlTower controlroom = new yControlTower(water,rain);
+new Exit(tower3,controlroom,"ud");
 
 //TOP FLOOR, halls and approach
 
@@ -64,6 +76,7 @@ yHallApproach approach2 = new yHallApproach(2);
 
 new Exit(approach1,approach2,"we");
 new Exit(approach2,hall,"ns");
+new Exit(approach1,side3,"ew");
 
 //START THE GAME
 
